@@ -1,0 +1,79 @@
+{
+  "section": "BSAI-2C",
+  "semester": "2nd Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [],
+    "tuesday": [
+      {
+        "course": "CSC 1207 Digital Logic Design (2,0)",
+        "faculty": "Raheel Ahmed",
+        "room": "Hall 01 A",
+        "time": "08:00 AM – 10:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1109 Pakistan Studies (2,0)",
+        "faculty": "Aizaz Raziq",
+        "room": "Hall 01 A",
+        "time": "10:00 AM – 12:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1209 Islamic Studies / Humanities (2,0)",
+        "faculty": "Zafar Iqbal",
+        "room": "205",
+        "time": "12:00 PM – 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "wednesday": [],
+    "thursday": [
+      {
+        "course": "CSC 1206 Probability and Statistics (3,0)",
+        "faculty": "kurrat Al Ain",
+        "room": "303",
+        "time": "11:00 AM – 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1208 Object Oriented Programming Techniques (3,0)",
+        "faculty": "Hafiz Abdul Basit Shah",
+        "room": "303",
+        "time": "12:30 PM – 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 2101 Communication and Presentation Skills (3,0)",
+        "faculty": "Muhammad Ameer",
+        "room": "Hall 01 A",
+        "time": "02:00 PM – 03:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "friday": [
+      {
+        "course": "CSC 2101 Communication and Presentation Skills (3,0)",
+        "faculty": "Muhammad Ameer",
+        "room": "105",
+        "time": "08:00 AM - 09:30 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1206 Probability and Statistics (3,0)",
+        "faculty": "kurrat Al Ain",
+        "room": "105",
+        "time": "09:30 AM - 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1208 Object Oriented Programming Techniques (3,0)",
+        "faculty": "Hafiz Abdul Basit Shah",
+        "room": "103",
+        "time": "11:00 AM - 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "saturday": []
+  }
+}

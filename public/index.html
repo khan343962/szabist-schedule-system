@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="blob blob1"></div>
+        <div class="blob blob2"></div>
+        <div class="blob blob3"></div>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <div class="logo">
+                    <span class="logo-circle"></span>
+                    <span class="logo-text">regist.</span>
+                </div>
+                <h1>Student <span class="gradient-text">Registration</span></h1>
+                <p>Join our vibrant student community and unlock your potential<span class="emoji">✨</span></p>
+            </div>
+            
+            <form id="studentForm">
+                <div class="form-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-step active">
+                        <span>1</span>
+                        <p>Basic</p>
+                    </div>
+                    <div class="progress-step">
+                        <span>2</span>
+                        <p>Details</p>
+                    </div>
+                    <div class="progress-step">
+                        <span>3</span>
+                        <p>Final</p>
+                    </div>
+                </div>
+                
+                <!-- Step 1: Basic Information -->
+                <div class="form-step" id="step1">
+                    <div class="form-group">
+                        <label for="studentName">Student Name <span class="required">*</span></label>
+                        <div class="input-container">
+                            <input type="text" id="studentName" name="studentName" placeholder="Enter your full name" required>
+                            <i class="fas fa-user input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                        <div class="input-container">
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="03001234567 (Pakistani format)" required>
+                            <i class="fas fa-phone input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <div class="input-container">
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <i class="fas fa-envelope input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-primary next-step" data-step="2">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Additional Details -->
+                <div class="form-step" id="step2" style="display: none;">
+                    <div class="form-group">
+                        <label for="department">Department <span class="required">*</span></label>
+                        <div class="custom-select">
+                            <select id="department" name="department" required>
+                                <option value="">Select a department</option>
+                                <option value="Management Sciences">Management Sciences</option>
+                                <option value="Computer Sciences">Computer Sciences</option>
+                                <option value="Executive Programs">Executive Programs</option>
+                                <option value="Social Sciences">Social Sciences</option>
+                                <option value="Media Sciences">Media Sciences</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="program">Program <span class="required">*</span></label>
+                        <div class="custom-select">
+                            <select id="program" name="program" required>
+                                <option value="">Select a department first</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="section">Section <span class="required">*</span></label>
+                        <div class="custom-select">
+                            <select id="section" name="section" required>
+                                <option value="">Select a section</option>
+                                <option value="A">Section A</option>
+                                <option value="B">Section B</option>
+                                <option value="C">Section C</option>
+                                <option value="D">Section D</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="semester">Semester <span class="required">*</span></label>
+                        <div class="custom-select">
+                            <select id="semester" name="semester" required>
+                                <option value="">Select semester</option>
+                                <option value="1">1st Semester</option>
+                                <option value="2">2nd Semester</option>
+                                <option value="3">3rd Semester</option>
+                                <option value="4">4th Semester</option>
+                                <option value="5">5th Semester</option>
+                                <option value="6">6th Semester</option>
+                                <option value="7">7th Semester</option>
+                                <option value="8">8th Semester</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary prev-step" data-step="1"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" class="btn-primary next-step" data-step="3">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Final Details -->
+                <div class="form-step" id="step3" style="display: none;">
+                    <div class="form-group">
+                        <label>Gender <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <div class="radio-card">
+                                <input type="radio" id="male" name="gender" value="Male" required>
+                                <label for="male">
+                                    <i class="fas fa-mars"></i>
+                                    <span>Male</span>
+                                </label>
+                            </div>
+                            <div class="radio-card">
+                                <input type="radio" id="female" name="gender" value="Female">
+                                <label for="female">
+                                    <i class="fas fa-venus"></i>
+                                    <span>Female</span>
+                                </label>
+                            </div>
+                            <div class="radio-card">
+                                <input type="radio" id="other" name="gender" value="Other">
+                                <label for="other">
+                                    <i class="fas fa-transgender"></i>
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dob">Date of Birth <span class="required">*</span></label>
+                        <div class="input-container">
+                            <input type="date" id="dob" name="dob" required>
+                            <i class="fas fa-calendar-alt input-icon"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="regNumber">Student Reg Number <span class="required">*</span></label>
+                        <div class="input-container">
+                            <input type="text" id="regNumber" name="regNumber" placeholder="Enter your registration number" required>
+                            <i class="fas fa-hashtag input-icon"></i>
+                        </div>
+                        <p class="hint">Enter your student registration number (e.g., 2024-CS-001)</p>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary prev-step" data-step="2"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="submit" class="btn-submit">Submit <i class="fas fa-check"></i></button>
+                    </div>
+                </div>
+            </form>
+            
+            <div id="statusMessage"></div>
+        </div>
+        
+        <div class="illustration">
+            <div class="illustration-content">
+                <div class="student-illustration">
+                    <div class="welcome-graphic">
+                        <div class="graphic-circle">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="graphic-dots">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                    <div class="illustration-card">
+                        <div class="card-icon">🎓</div>
+                        <h3>Join Us!</h3>
+                        <p>Become part of our diverse learning community</p>
+                    </div>
+                    <div class="illustration-card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Grow</h3>
+                        <p>Access resources to reach your full potential</p>
+                    </div>
+                    <div class="illustration-card">
+                        <div class="card-icon">🌈</div>
+                        <h3>Connect</h3>
+                        <p>Build meaningful connections with peers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "section": "BSAI-1E",
+  "semester": "1st Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [
+      {
+        "course": "CSC 1108 Introduction to Computer Science (2,0)",
+        "faculty": "Hamza Imran",
+        "room": "306",
+        "time": "08:00 AM – 10:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1101 Calculus and Analytical Geometry (3,0)",
+        "faculty": "Aizaz Raziq",
+        "room": "306",
+        "time": "10:00 AM - 11:30 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1107 Applied Physics (2,0)",
+        "faculty": "Dr. Kamran",
+        "room": "306",
+        "time": "11:30 AM – 01:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "tuesday": [],
+    "wednesday": [],
+    "thursday": [],
+    "friday": [],
+    "saturday": []
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "section": "BSAI-4A",
+  "semester": "4th Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [
+      {
+        "course": "CSCL 2203 Lab: Database Systems (0,1)",
+        "faculty": "Zahra Khalid Butt",
+        "room": "Lab 06",
+        "time": "02:00 PM – 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 3205 Computer Networks and Data Communications (3,0)",
+        "faculty": "Sarwat Nadeem",
+        "room": "301",
+        "time": "05:00 PM – 06:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "tuesday": [],
+    "wednesday": [],
+    "thursday": [
+      {
+        "course": "AIC 2401 Programming for Artificial Intelligence (2,0)",
+        "faculty": "Dr. Rizwan Rashid",
+        "room": "202",
+        "time": "03:00 PM – 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 3205 Computer Networks and Data Communications (3,0)",
+        "faculty": "Sarwat Nadeem",
+        "room": "302",
+        "time": "05:00 PM – 06:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "friday": [
+      {
+        "course": "CSC 3205 Computer Networks and Data Communications (3,0)",
+        "faculty": "Sarwat Nadeem",
+        "room": "105",
+        "time": "02:00 PM - 03:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 3202 Design and Analysis of Algorithms (3,0)",
+        "faculty": "Aizaz Raziq",
+        "room": "105",
+        "time": "03:30 PM - 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4802 Data Mining (3,0)",
+        "faculty": "Mr. Muslim Rizvi",
+        "room": "205",
+        "time": "05:00 PM - 06:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "saturday": [
+      {
+        "course": "CSC 2203 Database Systems (3,0)",
+        "faculty": "Haroon",
+        "room": "305",
+        "time": "09:30 AM - 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4802 Data Mining (3,0)",
+        "faculty": "Muslim Rizvi",
+        "room": "Hall 01 A",
+        "time": "11:00 AM - 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ]
+  }
+}

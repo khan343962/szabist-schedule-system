@@ -1,0 +1,35 @@
+{
+  "section": "BSAI-8A",
+  "semester": "8th Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [],
+    "tuesday": [
+      {
+        "course": "AIC 4801 Information Security (3,0)",
+        "faculty": "Aizaz Raziq",
+        "room": "101",
+        "time": "05:00 PM – 06:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4504 Organizational Behavior (3,0)",
+        "faculty": "Ahtisham Ahmed",
+        "room": "301",
+        "time": "08:00 PM – 09:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4805 Speech Processing (3,0)",
+        "faculty": "Hamza Imran",
+        "room": "302",
+        "time": "06:30 PM – 08:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "wednesday": [],
+    "thursday": [],
+    "friday": [],
+    "saturday": []
+  }
+}

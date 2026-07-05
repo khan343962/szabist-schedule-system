@@ -1,0 +1,87 @@
+{
+  "section": "BSAI-1C",
+  "semester": "1st Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [
+      {
+        "course": "CSC 1108 Introduction to Computer Science (2,0)",
+        "faculty": "Saba Khalil",
+        "room": "302",
+        "time": "08:00 AM – 10:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1107 Applied Physics (2,0)",
+        "faculty": "Rabia Allah Ditta",
+        "room": "302",
+        "time": "10:00 AM – 12:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1103 Fundamentals of Programming (3,0)",
+        "faculty": "Dr. Muhammad Imran",
+        "room": "204",
+        "time": "12:00 PM – 01:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "tuesday": [],
+    "wednesday": [
+      {
+        "course": "CSC 1102 English Composition and Comprehension (3,0)",
+        "faculty": "Muhammad Ameer",
+        "room": "305",
+        "time": "08:00 AM – 09:30 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1101 Calculus and Analytical Geometry (3,0)",
+        "faculty": "kurrat Al Ain",
+        "room": "305",
+        "time": "09:30 AM – 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "thursday": [
+      {
+        "course": "CSCL 1108 Lab: Introduction to Computer Science (0,1)",
+        "faculty": "Mujahid Aziz",
+        "room": "Lab 04",
+        "time": "08:00 AM – 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSCL 1107 Lab: Applied Physics (0,1)",
+        "faculty": "Tayyaba Shireen",
+        "room": "Lab 01",
+        "time": "11:00 AM – 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "friday": [
+      {
+        "course": "CSC 1101 Calculus and Analytical Geometry (3,0)",
+        "faculty": "kurrat Al Ain",
+        "room": "205",
+        "time": "08:00 AM - 09:30 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1102 English Composition and Comprehension (3,0)",
+        "faculty": "Muhammad Ameer",
+        "room": "205",
+        "time": "09:30 AM - 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1103 Fundamentals of Programming (3,0)",
+        "faculty": "Dr. Muhammad Imran",
+        "room": "205",
+        "time": "11:00 AM - 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "saturday": []
+  }
+}

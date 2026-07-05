@@ -1,0 +1,87 @@
+{
+  "section": "BSAI-2B",
+  "semester": "2nd Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [
+      {
+        "course": "CSCL 1208 Lab: Object Oriented Programming Techniques (0,1)",
+        "faculty": "Annas Khalid",
+        "room": "Lab 06",
+        "time": "08:00 AM – 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 2101 Communication and Presentation Skills (3,0)",
+        "faculty": "Shahbaz Malik",
+        "room": "301",
+        "time": "11:00 AM – 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1208 Object Oriented Programming Techniques (3,0)",
+        "faculty": "Aizaz Raziq",
+        "room": "301",
+        "time": "12:30 PM – 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "tuesday": [],
+    "wednesday": [
+      {
+        "course": "CSCL 1207 Lab: Digital Logic Design (0,1)",
+        "faculty": "IQRA Ibrar",
+        "room": "Digital Lab",
+        "time": "08:00 AM – 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "thursday": [
+      {
+        "course": "CSC 1209 Islamic Studies / Humanities (2,0)",
+        "faculty": "Muhammad Qasim",
+        "room": "Hall 01 A",
+        "time": "08:00 AM – 10:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1109 Pakistan Studies (2,0)",
+        "faculty": "Zafar Iqbal",
+        "room": "Hall 01 A",
+        "time": "10:00 AM – 12:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1206 Probability and Statistics (3,0)",
+        "faculty": "Saida Faiz",
+        "room": "Hall 01 A",
+        "time": "12:00 PM – 01:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "friday": [
+      {
+        "course": "CSC 1206 Probability and Statistics (3,0)",
+        "faculty": "Saida Faiz",
+        "room": "104",
+        "time": "08:00 AM - 09:30 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 2101 Communication and Presentation Skills (3,0)",
+        "faculty": "Shahbaz Malik",
+        "room": "104",
+        "time": "09:30 AM - 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1207 Digital Logic Design (2,0)",
+        "faculty": "Aizaz Raziq",
+        "room": "104",
+        "time": "11:00 AM - 01:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "saturday": []
+  }
+}

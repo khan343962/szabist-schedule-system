@@ -1,0 +1,1962 @@
+{
+  "department": "BS AI - Bachelors of Artificial Intelligence",
+  "semester": "Fall 2025",
+  "sections": {
+    "BSAI-1A": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 1102",
+            "course_name": "English Composition and Comprehension",
+            "credits": "(3,0)",
+            "instructor": "Ms Sadia Munir (VF)",
+            "time": "08:00 - 09:30",
+            "room": 1
+          },
+          {
+            "course_code": "CSC 1103",
+            "course_name": "Fundamentals of Programming",
+            "credits": "(3,0)",
+            "instructor": "Mr. Aizaz Raziq",
+            "time": "09:30 - 11:00",
+            "room": 2
+          },
+          {
+            "course_code": "CSCL 1108",
+            "course_name": "Lab: Introduction to Computer Science",
+            "credits": "(0,1)",
+            "instructor": "Mr. Ahsan Abbas",
+            "time": "11:00 - 02:00",
+            "room": 3
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSC 1107",
+            "course_name": "Applied Physics",
+            "credits": "(2,0)",
+            "instructor": "Dr kamran (VF)",
+            "time": "08:00 - 10:00",
+            "room": 4
+          },
+          {
+            "course_code": "CSC 1108",
+            "course_name": "Introduction to Computer Science",
+            "credits": "(2,0)",
+            "instructor": "Mr. Atif Iftikhar",
+            "time": "10:00 - 12:00",
+            "room": 5
+          },
+          {
+            "course_code": "CSC 1101",
+            "course_name": "Calculus and Analytical Geometry",
+            "credits": "(3,0)",
+            "instructor": "Dr. Hina Gul (VF)",
+            "time": "12:00 - 1:30",
+            "room": 6
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 1102",
+            "course_name": "English Composition and Comprehension",
+            "credits": "(3,0)",
+            "instructor": "Ms Sadia Munir (VF)",
+            "time": "08:00 - 09:30",
+            "room": 7
+          },
+          {
+            "course_code": "CSC 1101",
+            "course_name": "Calculus and Analytical Geometry",
+            "credits": "(3,0)",
+            "instructor": "Dr. Hina Gul (VF)",
+            "time": "09:30 - 11:00",
+            "room": 8
+          },
+          {
+            "course_code": "CSC 1103",
+            "course_name": "Fundamentals of Programming",
+            "credits": "(3,0)",
+            "instructor": "Mr. Aizaz Raziq",
+            "time": "11:00 - 12:30",
+            "room": 9
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSCL 1103",
+            "course_name": "Lab: Fundamentals of Programming",
+            "credits": "(0,1)",
+            "instructor": "Ms. Zahra Khalid",
+            "time": "08:00 - 10:45",
+            "room": 10
+          },
+          {
+            "course_code": "CSCL 1107",
+            "course_name": "Lab: Applied Physics",
+            "credits": "(0,1)",
+            "instructor": "Ms Kainat Javed (VF)",
+            "time": "10:45 - 1:30",
+            "room": 11
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BSAI-1B": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 1103",
+            "course_name": "Fundamentals of Programming",
+            "credits": "(3,0)",
+            "instructor": "Maryam Mir",
+            "time": "08:00 - 09:30",
+            "room": 12
+          },
+          {
+            "course_code": "CSC 1102",
+            "course_name": "English Composition and Comprehension",
+            "credits": "(3,0)",
+            "instructor": "Aizaz Raziq",
+            "time": "09:30 - 11:00",
+            "room": 13
+          },
+          {
+            "course_code": "CSCL 1103",
+            "course_name": "Lab: Fundamentals of Programming",
+            "credits": "(0,1)",
+            "instructor": "Mr. Atif Iftikhar",
+            "time": "11:00 - 02:00",
+            "room": 14
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSC 1108",
+            "course_name": "Introduction to Computer Science",
+            "credits": "(2,0)",
+            "instructor": "Zahra Khalid",
+            "time": "08:00 - 10:00",
+            "room": 15
+          },
+          {
+            "course_code": "CSC 1107",
+            "course_name": "Applied Physics",
+            "credits": "(2,0)",
+            "instructor": "Dr kamran (VF)",
+            "time": "10:00 - 12:00",
+            "room": 16
+          },
+          {
+            "course_code": "CSC 1101",
+            "course_name": "Calculus and Analytical Geometry",
+            "credits": "(3,0)",
+            "instructor": "Ms Tayyaba Mukhtar (VF)",
+            "time": "12:00 - 1:30",
+            "room": 17
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 1102",
+            "course_name": "English Composition and Comprehension",
+            "credits": "(3,0)",
+            "instructor": "Ms Kainat Javed (VF)",
+            "time": "08:00 - 09:30",
+            "room": 18
+          },
+          {
+            "course_code": "CSC 1101",
+            "course_name": "Calculus and Analytical Geometry",
+            "credits": "(3,0)",
+            "instructor": "Ms Tayyaba Mukhtar (VF)",
+            "time": "09:30 - 11:00",
+            "room": 19
+          },
+          {
+            "course_code": "CSC 1103",
+            "course_name": "Fundamentals of Programming",
+            "credits": "(3,0)",
+            "instructor": "Maryam Mir",
+            "time": "11:00 - 12:30",
+            "room": 20
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSCL 1107",
+            "course_name": "Lab: Applied Physics",
+            "credits": "(0,1)",
+            "instructor": "Ms Kainat Javed (VF)",
+            "time": "08:00 - 10:45",
+            "room": 21
+          },
+          {
+            "course_code": "CSCL 1108",
+            "course_name": "Lab: Introduction to Computer Science",
+            "credits": "(0,1)",
+            "instructor": "Ms. Sidra Safdar",
+            "time": "10:45 - 1:30",
+            "room": 22
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BSAI-1C": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 1108",
+            "course_name": "Introduction to Computer Science",
+            "credits": "(2,0)",
+            "instructor": "Ms Saba Khalil (VF)",
+            "time": "08:00 - 10:00",
+            "room": 23
+          },
+          {
+            "course_code": "CSC 1107",
+            "course_name": "Applied Physics",
+            "credits": "(2,0)",
+            "instructor": "Ms Rabia Allah Ditta (VF)",
+            "time": "10:00 - 12:00",
+            "room": 24
+          },
+          {
+            "course_code": "CSC 1103",
+            "course_name": "Fundamentals of Programming",
+            "credits": "(3,0)",
+            "instructor": "Dr. Muhammad Imran",
+            "time": "12:00 - 1:30",
+            "room": 25
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSC 1102",
+            "course_name": "English Composition and Comprehension",
+            "credits": "(3,0)",
+            "instructor": "Muhammad Ameer (VF)",
+            "time": "08:00 - 09:30",
+            "room": 26
+          },
+          {
+            "course_code": "CSC 1101",
+            "course_name": "Calculus and Analytical Geometry",
+            "credits": "(3,0)",
+            "instructor": "Ms kurrat Al Ain (VF)",
+            "time": "09:30 - 11:00",
+            "room": 27
+          },
+          {
+            "course_code": "CSCL 1103",
+            "course_name": "Lab: Fundamentals of Programming",
+            "credits": "(0,1)",
+            "instructor": "Faheem (VF)",
+            "time": "11:00 - 02:00",
+            "room": 28
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSCL 1108",
+            "course_name": "Lab: Introduction to Computer Science",
+            "credits": "(0,1)",
+            "instructor": "Mujahid Aziz (VF)",
+            "time": "08:00 - 11:00",
+            "room": 29
+          },
+          {
+            "course_code": "CSCL 1107",
+            "course_name": "Lab: Applied Physics",
+            "credits": "(0,1)",
+            "instructor": "Ms Tayyaba Shireen (VF)",
+            "time": "11:00 - 02:00",
+            "room": 30
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 1101",
+            "course_name": "Calculus and Analytical Geometry",
+            "credits": "(3,0)",
+            "instructor": "Ms kurrat Al Ain (VF)",
+            "time": "08:00 - 09:30",
+            "room": 31
+          },
+          {
+            "course_code": "CSC 1102",
+            "course_name": "English Composition and Comprehension",
+            "credits": "(3,0)",
+            "instructor": "Muhammad Ameer (VF)",
+            "time": "09:30 - 11:00",
+            "room": 32
+          },
+          {
+            "course_code": "CSC 1103",
+            "course_name": "Fundamentals of Programming",
+            "credits": "(3,0)",
+            "instructor": "Dr. Muhammad Imran",
+            "time": "11:00 - 12:30",
+            "room": 33
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BSAI-1D": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 1107",
+            "course_name": "Applied Physics",
+            "credits": "(2,0)",
+            "instructor": "Ms Rabia Allah Ditta (VF)",
+            "time": "08:00 - 10:00",
+            "room": 34
+          },
+          {
+            "course_code": "CSC 1108",
+            "course_name": "Introduction to Computer Science",
+            "credits": "(2,0)",
+            "instructor": "Ms Saba Khalil (VF)",
+            "time": "10:00 - 12:00",
+            "room": 35
+          },
+          {
+            "course_code": "CSC 1103",
+            "course_name": "Fundamentals of Programming",
+            "credits": "(3,0)",
+            "instructor": "Mr. Anees Tariq",
+            "time": "12:00 - 1:30",
+            "room": 36
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSC 1102",
+            "course_name": "English Composition and Comprehension",
+            "credits": "(3,0)",
+            "instructor": "Shahbaz Malik (VF)",
+            "time": "08:00 - 09:30",
+            "room": 37
+          },
+          {
+            "course_code": "CSC 1101",
+            "course_name": "Calculus and Analytical Geometry",
+            "credits": "(3,0)",
+            "instructor": "Dr Sadaqal (VF)",
+            "time": "09:30 - 11:00",
+            "room": 38
+          },
+          {
+            "course_code": "CSCL 1103",
+            "course_name": "Lab: Fundamentals of Programming",
+            "credits": "(0,1)",
+            "instructor": "Mr. Ahsan Abbas",
+            "time": "11:00 - 02:00",
+            "room": 39
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSCL 1107",
+            "course_name": "Lab: Applied Physics",
+            "credits": "(0,1)",
+            "instructor": "Ms Tayyaba Shireen (VF)",
+            "time": "08:00 - 11:00",
+            "room": 40
+          },
+          {
+            "course_code": "CSCL 1108",
+            "course_name": "Lab: Introduction to Computer Science",
+            "credits": "(0,1)",
+            "instructor": "Ms Iqra Ibrar (VF)",
+            "time": "11:00 - 02:00",
+            "room": 41
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 1102",
+            "course_name": "English Composition and Comprehension",
+            "credits": "(3,0)",
+            "instructor": "Shahbaz Malik (VF)",
+            "time": "08:00 - 09:30",
+            "room": 42
+          },
+          {
+            "course_code": "CSC 1101",
+            "course_name": "Calculus and Analytical Geometry",
+            "credits": "(3,0)",
+            "instructor": "Dr Sadaqal (VF)",
+            "time": "09:30 - 11:00",
+            "room": 43
+          },
+          {
+            "course_code": "CSC 1103",
+            "course_name": "Fundamentals of Programming",
+            "credits": "(3,0)",
+            "instructor": "Mr. Anees Tariq",
+            "time": "11:00 - 12:30",
+            "room": 44
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BSAI-2A": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSCL 1208",
+            "course_name": "Lab: Object Oriented Programming Techniques",
+            "credits": "(0,1)",
+            "instructor": "Ms. Zahra Khalid",
+            "time": "8:00 - 11:00",
+            "room": 45
+          },
+          {
+            "course_code": "CSC 1206",
+            "course_name": "Probability and Statistics",
+            "credits": "(3,0)",
+            "instructor": "Dr Sadaqal (VF)",
+            "time": "11:00 - 12:30",
+            "room": 46
+          },
+          {
+            "course_code": "CSC 2101",
+            "course_name": "Communication and Presentation Skills",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan",
+            "time": "12:30 - 02:00",
+            "room": 47
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSCL 1207",
+            "course_name": "Lab: Digital Logic Design",
+            "credits": "(0,1)",
+            "instructor": "Ahsan Abbas",
+            "time": "8:00 - 11:00",
+            "room": 48
+          },
+          {
+            "course_code": "CSC 1208",
+            "course_name": "Object Oriented Programming Techniques",
+            "credits": "(3,0)",
+            "instructor": "Mr. Muslim Rizvi",
+            "time": "12:30 - 02:00",
+            "room": 49
+          },
+          {
+            "course_code": "CSC 1207",
+            "course_name": "Digital Logic Design",
+            "credits": "(2,0)",
+            "instructor": "Mr Zaigham Abbas (VF)",
+            "time": "12:00 - 02:00",
+            "room": 50
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 1109",
+            "course_name": "Pakistan Studies",
+            "credits": "(2,0)",
+            "instructor": "Mr Zafar Iqbal (VF)",
+            "time": "08:00 - 10:00",
+            "room": 51
+          },
+          {
+            "course_code": "CSC 1209",
+            "course_name": "Islamic Studies / Humanities",
+            "credits": "(2,0)",
+            "instructor": "Muhammad Qasim (VF)",
+            "time": "10:00 - 12:00",
+            "room": 52
+          },
+          {
+            "course_code": "CSC 2101",
+            "course_name": "Communication and Presentation Skills",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "11:00 - 12:30",
+            "room": 53
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 1206",
+            "course_name": "Probability and Statistics",
+            "credits": "(3,0)",
+            "instructor": "Dr Sadaqal (VF)",
+            "time": "08:00 - 09:30",
+            "room": 54
+          },
+          {
+            "course_code": "CSC 1208",
+            "course_name": "Object Oriented Programming Techniques",
+            "credits": "(3,0)",
+            "instructor": "Mr. Muslim Rizvi",
+            "time": "09:30 - 11:00",
+            "room": 55
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BSAI-2B": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSCL 1208",
+            "course_name": "Lab: Object Oriented Programming Techniques",
+            "credits": "(0,1)",
+            "instructor": "Mr. Annas Khalid",
+            "time": "8:00 - 11:00",
+            "room": 56
+          },
+          {
+            "course_code": "CSC 2101",
+            "course_name": "Communication and Presentation Skills",
+            "credits": "(3,0)",
+            "instructor": "Shahbaz Malik (VF)",
+            "time": "11:00 - 12:30",
+            "room": 57
+          },
+          {
+            "course_code": "CSC 1208",
+            "course_name": "Object Oriented Programming Techniques",
+            "credits": "(3,0)",
+            "instructor": "Mr. Aizaz Raziq",
+            "time": "12:30 - 02:00",
+            "room": 58
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSCL 1207",
+            "course_name": "Lab: Digital Logic Design",
+            "credits": "(0,1)",
+            "instructor": "Ms IQRA Ibrar (VF)",
+            "time": "8:00 - 11:00",
+            "room": 59
+          },
+          {
+            "course_code": "CSC 1208",
+            "course_name": "Object Oriented Programming Techniques",
+            "credits": "(3,0)",
+            "instructor": "Mr. Aizaz Raziq",
+            "time": "12:30 - 02:00",
+            "room": 60
+          },
+          {
+            "course_code": "CSC 1206",
+            "course_name": "Probability and Statistics",
+            "credits": "(3,0)",
+            "instructor": "Ms Saida Faiz (VF)",
+            "time": "12:00 - 01:30",
+            "room": 61
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 1209",
+            "course_name": "Islamic Studies / Humanities",
+            "credits": "(2,0)",
+            "instructor": "Muhammad Qasim (VF)",
+            "time": "08:00 - 10:00",
+            "room": 62
+          },
+          {
+            "course_code": "CSC 1109",
+            "course_name": "Pakistan Studies",
+            "credits": "(2,0)",
+            "instructor": "Mr Zafar Iqbal (VF)",
+            "time": "10:00 - 12:00",
+            "room": 63
+          },
+          {
+            "course_code": "CSC 1207",
+            "course_name": "Digital Logic Design",
+            "credits": "(2,0)",
+            "instructor": "Ms Saida Faiz (VF)",
+            "time": "11:00 - 01:00",
+            "room": 64
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 1206",
+            "course_name": "Probability and Statistics",
+            "credits": "(3,0)",
+            "instructor": "Ms Saida Faiz (VF)",
+            "time": "08:00 - 09:30",
+            "room": 65
+          },
+          {
+            "course_code": "CSC 2101",
+            "course_name": "Communication and Presentation Skills",
+            "credits": "(3,0)",
+            "instructor": "Shahbaz Malik (VF)",
+            "time": "09:30 - 11:00",
+            "room": 66
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BSAI-2C": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 1207",
+            "course_name": "Digital Logic Design",
+            "credits": "(2,0)",
+            "instructor": "Mr Raheel Ahmed (VF)",
+            "time": "08:00 - 10:00",
+            "room": 67
+          },
+          {
+            "course_code": "CSC 1109",
+            "course_name": "Pakistan Studies",
+            "credits": "(2,0)",
+            "instructor": "Faheem (VF)",
+            "time": "10:00 - 12:00",
+            "room": 68
+          },
+          {
+            "course_code": "CSC 1209",
+            "course_name": "Islamic Studies / Humanities",
+            "credits": "(2,0)",
+            "instructor": "Mr Zafar Iqbal (VF)",
+            "time": "12:00 - 02:00",
+            "room": 69
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSCL 1207",
+            "course_name": "Lab: Digital Logic Design",
+            "credits": "(0,1)",
+            "instructor": "Talha Sajjad (VF)",
+            "time": "11:00 - 02:00",
+            "room": 70
+          },
+          {
+            "course_code": "CSCL 1208",
+            "course_name": "Lab: Object Oriented Programming Techniques",
+            "credits": "(0,1)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "02:00 - 05:00",
+            "room": 71
+          },
+          {
+            "course_code": "CSC 2101",
+            "course_name": "Communication and Presentation Skills",
+            "credits": "(3,0)",
+            "instructor": "Muhammad Ameer (VF)",
+            "time": "02:00 - 03:30",
+            "room": 72
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 1206",
+            "course_name": "Probability and Statistics",
+            "credits": "(3,0)",
+            "instructor": "Ms kurrat Al Ain (VF)",
+            "time": "11:00 - 12:30",
+            "room": 73
+          },
+          {
+            "course_code": "CSC 1208",
+            "course_name": "Object Oriented Programming Techniques",
+            "credits": "(3,0)",
+            "instructor": "Ms kurrat Al Ain (VF)",
+            "time": "12:30 - 02:00",
+            "room": 74
+          },
+          {
+            "course_code": "CSC 1208",
+            "course_name": "Object Oriented Programming Techniques",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "11:00 - 12:30",
+            "room": 75
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 2101",
+            "course_name": "Communication and Presentation Skills",
+            "credits": "(3,0)",
+            "instructor": "Muhammad Ameer (VF)",
+            "time": "08:00 - 09:30",
+            "room": 76
+          },
+          {
+            "course_code": "CSC 1206",
+            "course_name": "Probability and Statistics",
+            "credits": "(3,0)",
+            "instructor": "Ms kurrat Al Ain (VF)",
+            "time": "09:30 - 11:00",
+            "room": 77
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-3A": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 3105",
+            "course_name": "Computer Organization and Assembly Language",
+            "credits": "(2,0)",
+            "instructor": "Mr Raheel Ahmed (VF)",
+            "time": "08:00 - 10:00",
+            "room": 78
+          },
+          {
+            "course_code": "CSC 1109",
+            "course_name": "Pakistan Studies",
+            "credits": "(2,0)",
+            "instructor": "Ms Arfa Khan(VF)",
+            "time": "10:00 - 12:00",
+            "room": 79
+          },
+          {
+            "course_code": "CSC 2102",
+            "course_name": "Data Structures and Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Ms. Sarwat Nadeem",
+            "time": "12:30 - 02:00",
+            "room": 80
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSCL 3206",
+            "course_name": "Lab: Artificial Intelligence",
+            "credits": "(0,1)",
+            "instructor": "Mr. Aizaz Raziq",
+            "time": "11:00 - 02:00",
+            "room": 81
+          },
+          {
+            "course_code": "CSC 1201",
+            "course_name": "Discrete Mathematical Structures",
+            "credits": "(3,0)",
+            "instructor": "Ms Tayyaba Mukhtar (VF)",
+            "time": "02:00 - 03:30",
+            "room": 82
+          },
+          {
+            "course_code": "CSC 1202",
+            "course_name": "Multivariate Calculus",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "03:30 - 05:00",
+            "room": 83
+          },
+          {
+            "course_code": "CSC 2102",
+            "course_name": "Data Structures and Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Ms. Sarwat Nadeem",
+            "time": "05:00 - 06:30",
+            "room": 84
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 1202",
+            "course_name": "Multivariate Calculus",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "08:00 - 9:30",
+            "room": 85
+          },
+          {
+            "course_code": "CSC 1201",
+            "course_name": "Discrete Mathematical Structures",
+            "credits": "(3,0)",
+            "instructor": "Ms Tayyaba Mukhtar (VF)",
+            "time": "9:30 - 11:00",
+            "room": 86
+          },
+          {
+            "course_code": "CSC 3206",
+            "course_name": "Artificial Intelligence",
+            "credits": "(2,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "11:00 - 01:00",
+            "room": 87
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSCL 3105",
+            "course_name": "Lab: Computer Organization and Assembly Language",
+            "credits": "(0,1)",
+            "instructor": "",
+            "time": "08:00 - 11:00",
+            "room": 88
+          },
+          {
+            "course_code": "CSCL 2102",
+            "course_name": "Lab: Data Structures and Algorithms",
+            "credits": "(0,1)",
+            "instructor": "Mr. Hasaan Mujtaba",
+            "time": "11:00 - 02:00",
+            "room": 89
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-3B": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 1109",
+            "course_name": "Pakistan Studies",
+            "credits": "(2,0)",
+            "instructor": "Ms Arfa Khan(VF)",
+            "time": "08:00 - 10:00",
+            "room": 90
+          },
+          {
+            "course_code": "CSC 3105",
+            "course_name": "Computer Organization and Assembly Language",
+            "credits": "(2,0)",
+            "instructor": "Mr Zaigham Abbas (VF)",
+            "time": "10:00 - 12:00",
+            "room": 91
+          },
+          {
+            "course_code": "CSC 2102",
+            "course_name": "Data Structures and Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "12:30 - 02:00",
+            "room": 92
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSCL 3206",
+            "course_name": "Lab: Artificial Intelligence",
+            "credits": "(0,1)",
+            "instructor": "Anees Tariq",
+            "time": "08:00 - 11:00",
+            "room": 93
+          },
+          {
+            "course_code": "CSC 2102",
+            "course_name": "Data Structures and Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "12:30 - 02:00",
+            "room": 94
+          },
+          {
+            "course_code": "CSC 1202",
+            "course_name": "Multivariate Calculus",
+            "credits": "(3,0)",
+            "instructor": "Mr Tallat Abbas (VF)",
+            "time": "02:00 - 03:30",
+            "room": 95
+          },
+          {
+            "course_code": "CSC 1201",
+            "course_name": "Discrete Mathematical Structures",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "03:30 - 05:00",
+            "room": 96
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 1202",
+            "course_name": "Multivariate Calculus",
+            "credits": "(3,0)",
+            "instructor": "Mr Tallat Abbas (VF)",
+            "time": "08:00 - 9:30",
+            "room": 97
+          },
+          {
+            "course_code": "CSC 1201",
+            "course_name": "Discrete Mathematical Structures",
+            "credits": "(3,0)",
+            "instructor": "Talha Sajjad (VF)",
+            "time": "9:30 - 11:00",
+            "room": 98
+          },
+          {
+            "course_code": "CSC 3206",
+            "course_name": "Artificial Intelligence",
+            "credits": "(2,0)",
+            "instructor": "Mr Tallat Abbas (VF)",
+            "time": "11:00 - 01:00",
+            "room": 99
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSCL 2102",
+            "course_name": "Lab: Data Structures and Algorithms",
+            "credits": "(0,1)",
+            "instructor": "Ms. Sidra Safdar",
+            "time": "08:00 - 11:00",
+            "room": 100
+          },
+          {
+            "course_code": "CSCL 3105",
+            "course_name": "Lab: Computer Organization and Assembly Language",
+            "credits": "(0,1)",
+            "instructor": "Talha Sajjad (VF)",
+            "time": "11:00 - 02:00",
+            "room": 101
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-3C": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 1201",
+            "course_name": "Discrete Mathematical Structures",
+            "credits": "(3,0)",
+            "instructor": "Ms Ayesha Asghar (VF)",
+            "time": "11:00 - 12:30",
+            "room": 102
+          },
+          {
+            "course_code": "CSC 2102",
+            "course_name": "Data Structures and Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "12:30 - 02:00",
+            "room": 103
+          },
+          {
+            "course_code": "CSCL 3206",
+            "course_name": "Lab: Artificial Intelligence",
+            "credits": "(0,1)",
+            "instructor": "Mr. Hasaan Mujtaba",
+            "time": "02:00 - 05:00",
+            "room": 104
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSC 1109",
+            "course_name": "Pakistan Studies",
+            "credits": "(2,0)",
+            "instructor": "Mr. Annas Khalid",
+            "time": "08:00 - 10:00",
+            "room": 105
+          },
+          {
+            "course_code": "CSC 3206",
+            "course_name": "Artificial Intelligence",
+            "credits": "(2,0)",
+            "instructor": "Mr. Atif Iftikhar",
+            "time": "10:00 - 12:00",
+            "room": 106
+          },
+          {
+            "course_code": "CSC 3105",
+            "course_name": "Computer Organization and Assembly Language",
+            "credits": "(2,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "12:00 - 02:00",
+            "room": 107
+          },
+          {
+            "course_code": "CSC 1202",
+            "course_name": "Multivariate Calculus",
+            "credits": "(3,0)",
+            "instructor": "Ms Ayesha Asghar (VF)",
+            "time": "02:00 - 03:30",
+            "room": 108
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 1202",
+            "course_name": "Multivariate Calculus",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "02:00 - 03:30",
+            "room": 109
+          },
+          {
+            "course_code": "CSC 1201",
+            "course_name": "Discrete Mathematical Structures",
+            "credits": "(3,0)",
+            "instructor": "Ms Fiza Fatima (VF)",
+            "time": "03:30 - 05:00",
+            "room": 110
+          },
+          {
+            "course_code": "CSC 2102",
+            "course_name": "Data Structures and Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "05:00 - 06:30",
+            "room": 111
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSCL 2102",
+            "course_name": "Lab: Data Structures and Algorithms",
+            "credits": "(0,1)",
+            "instructor": "",
+            "time": "08:00 - 11:00",
+            "room": 112
+          },
+          {
+            "course_code": "CSCL 3105",
+            "course_name": "Lab: Computer Organization and Assembly Language",
+            "credits": "(0,1)",
+            "instructor": "Ms Fiza Fatima (VF)",
+            "time": "11:00 - 02:00",
+            "room": 113
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-4A": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSCL 2203",
+            "course_name": "Lab: Database Systems",
+            "credits": "(0,1)",
+            "instructor": "Ms. Zahra Khalid",
+            "time": "02:00 - 05:00",
+            "room": 114
+          },
+          {
+            "course_code": "CSC 3205",
+            "course_name": "Computer Networks and Data Communications",
+            "credits": "(3,0)",
+            "instructor": "Sarwat Nadeem",
+            "time": "05:00 - 06:30",
+            "room": 115
+          },
+          {
+            "course_code": "AIC 4802",
+            "course_name": "Data Mining",
+            "credits": "(3,0)",
+            "instructor": "Mr. Muslim Rizvi",
+            "time": "05:00 - 06:30",
+            "room": 116
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "AICL 2401",
+            "course_name": "Lab: Programming for Artificial Intelligence",
+            "credits": "(0,1)",
+            "instructor": "Anees Tariq",
+            "time": "02:00 - 05:00",
+            "room": 117
+          },
+          {
+            "course_code": "CSCL 3205",
+            "course_name": "Lab: Computer Networks and Data Communications",
+            "credits": "(0,1)",
+            "instructor": "Ms Fiza Fatima (VF)",
+            "time": "05:00 - 08:00",
+            "room": 118
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "AIC 2401",
+            "course_name": "Programming for Artificial Intelligence",
+            "credits": "(2,0)",
+            "instructor": "Dr. Rizwan Rashid",
+            "time": "03:00 - 05:00",
+            "room": 119
+          },
+          {
+            "course_code": "CSC 2203",
+            "course_name": "Database Systems",
+            "credits": "(3,0)",
+            "instructor": "Maryam Mir",
+            "time": "05:00 - 06:30",
+            "room": 120
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 3205",
+            "course_name": "Computer Networks and Data Communications",
+            "credits": "(3,0)",
+            "instructor": "Sarwat Nadeem",
+            "time": "02:00 - 03:30",
+            "room": 121
+          },
+          {
+            "course_code": "CSC 3202",
+            "course_name": "Design and Analysis of Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "03:30 - 05:00",
+            "room": 122
+          }
+        ],
+        "Friday": [
+          {
+            "course_code": "CSC 2203",
+            "course_name": "Database Systems",
+            "credits": "(3,0)",
+            "instructor": "Maryam Mir",
+            "time": "08:00 - 09:30",
+            "room": 123
+          },
+          {
+            "course_code": "CSC 3202",
+            "course_name": "Design and Analysis of Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "09:30 - 11:00",
+            "room": 124
+          },
+          {
+            "course_code": "AIC 4802",
+            "course_name": "Data Mining",
+            "credits": "(3,0)",
+            "instructor": "Mr. Muslim Rizvi",
+            "time": "11:00 - 12:30",
+            "room": 125
+          }
+        ],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-4B": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSCL 2203",
+            "course_name": "Lab: Database Systems",
+            "credits": "(0,1)",
+            "instructor": "Mr. Anees Tariq",
+            "time": "02:00 - 05:00",
+            "room": 126
+          },
+          {
+            "course_code": "CSCL 3205",
+            "course_name": "Lab: Computer Networks and Data Communications",
+            "credits": "(0,1)",
+            "instructor": "Mr Ahsan abbas",
+            "time": "05:00 - 08:00",
+            "room": 127
+          },
+          {
+            "course_code": "AIC 4802",
+            "course_name": "Data Mining",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hasaan Mujtaba",
+            "time": "05:00 - 06:30",
+            "room": 128
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "CSC 2203",
+            "course_name": "Database Systems",
+            "credits": "(3,0)",
+            "instructor": "Mr Haroon (VF)",
+            "time": "03:30 - 05:00",
+            "room": 129
+          },
+          {
+            "course_code": "AICL 2401",
+            "course_name": "Lab: Programming for Artificial Intelligence",
+            "credits": "(0,1)",
+            "instructor": "Mr. Annas Khalid",
+            "time": "05:00 - 08:00",
+            "room": 130
+          },
+          {
+            "course_code": "AIC 2401",
+            "course_name": "Programming for Artificial Intelligence",
+            "credits": "(2,0)",
+            "instructor": "Mr Sohail Abid (VF)",
+            "time": "11:00 - 1:00",
+            "room": 131
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 3205",
+            "course_name": "Computer Networks and Data Communications",
+            "credits": "(3,0)",
+            "instructor": "Ms. Maria Zuraiz",
+            "time": "03:30 - 05:00",
+            "room": 132
+          },
+          {
+            "course_code": "CSC 2203",
+            "course_name": "Database Systems",
+            "credits": "(3,0)",
+            "instructor": "Mr Haroon (VF)",
+            "time": "05:00 - 06:30",
+            "room": 133
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 3205",
+            "course_name": "Computer Networks and Data Communications",
+            "credits": "(3,0)",
+            "instructor": "Ms. Maria Zuraiz",
+            "time": "02:00 - 03:30",
+            "room": 134
+          },
+          {
+            "course_code": "CSC 3202",
+            "course_name": "Design and Analysis of Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Mr. Muslim Rizvi",
+            "time": "03:30 - 05:00",
+            "room": 135
+          }
+        ],
+        "Friday": [
+          {
+            "course_code": "AIC 4802",
+            "course_name": "Data Mining",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hasaan Mujtaba",
+            "time": "08:00 - 09:30",
+            "room": 136
+          },
+          {
+            "course_code": "CSC 3202",
+            "course_name": "Design and Analysis of Algorithms",
+            "credits": "(3,0)",
+            "instructor": "Mr. Muslim Rizvi",
+            "time": "09:30 - 11:00",
+            "room": 137
+          }
+        ],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-5A": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "AIC 3502",
+            "course_name": "Knowledge Representation and Reasoning",
+            "credits": "(3,0)",
+            "instructor": "Ms. Maria Zuraiz",
+            "time": "05:00 - 06:30",
+            "room": 138
+          },
+          {
+            "course_code": "AIC 4501",
+            "course_name": "Design and Creativity",
+            "credits": "(3,0)",
+            "instructor": "ZEESHAN AFGUN (VF)",
+            "time": "06:30 - 08:00",
+            "room": 139
+          },
+          {
+            "course_code": "AICL 3503",
+            "course_name": "Lab: Machine Learning",
+            "credits": "(0,1)",
+            "instructor": "Mr. Atif Iftikhar",
+            "time": "05:30 - 08:30",
+            "room": 140
+          },
+          {
+            "course_code": "AIC 3503",
+            "course_name": "Machine Learning",
+            "credits": "(2,0)",
+            "instructor": "",
+            "time": "06:30 - 08:30",
+            "room": 141
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "AIC 3502",
+            "course_name": "Knowledge Representation and Reasoning",
+            "credits": "(3,0)",
+            "instructor": "Ms. Maria Zuraiz",
+            "time": "02:00 - 3:30",
+            "room": 142
+          },
+          {
+            "course_code": "AIC 3501",
+            "course_name": "Artificial Neural Networks",
+            "credits": "(2,0)",
+            "instructor": "Dr. Rizwan Rashid",
+            "time": "03:30 - 05:30",
+            "room": 143
+          },
+          {
+            "course_code": "CSC 2205",
+            "course_name": "Operating Systems",
+            "credits": "(3,0)",
+            "instructor": "Maryam Mir",
+            "time": "08:00 - 09:30",
+            "room": 144
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSCL 2205",
+            "course_name": "Lab: Operating Systems",
+            "credits": "(0,1)",
+            "instructor": "Ms. Sidra Safdar",
+            "time": "02:00 - 05:00",
+            "room": 145
+          },
+          {
+            "course_code": "AICL 3501",
+            "course_name": "Lab: Artificial Neural Networks",
+            "credits": "(0,1)",
+            "instructor": "Mr. Muslim Rizvi",
+            "time": "05:00 - 08:00",
+            "room": 146
+          },
+          {
+            "course_code": "AIC 3502",
+            "course_name": "Knowledge Representation and Reasoning",
+            "credits": "(3,0)",
+            "instructor": "Maria Zuraiz",
+            "time": "05:00 - 06:30",
+            "room": 147
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "AIC 4501",
+            "course_name": "Design and Creativity",
+            "credits": "(3,0)",
+            "instructor": "ZEESHAN AFGUN (VF)",
+            "time": "02:00 - 03:30",
+            "room": 148
+          },
+          {
+            "course_code": "CSC 2205",
+            "course_name": "Operating Systems",
+            "credits": "(3,0)",
+            "instructor": "Maryam Mir",
+            "time": "03:30 - 05:00",
+            "room": 149
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-5B": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "AIC 3502",
+            "course_name": "Knowledge Representation and Reasoning",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan Khan",
+            "time": "05:00 - 06:30",
+            "room": 150
+          },
+          {
+            "course_code": "CSC 2205",
+            "course_name": "Operating Systems",
+            "credits": "(3,0)",
+            "instructor": "Ms. Sarwat Nadeem",
+            "time": "06:30 - 08:00",
+            "room": 151
+          },
+          {
+            "course_code": "AIC 4501",
+            "course_name": "Design and Creativity",
+            "credits": "(3,0)",
+            "instructor": "ZEESHAN AFGUN (VF)",
+            "time": "08:00 - 09:30",
+            "room": 152
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "AIC 3502",
+            "course_name": "Knowledge Representation and Reasoning",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan Khan",
+            "time": "12:30 - 02:00",
+            "room": 153
+          },
+          {
+            "course_code": "AICL 3501",
+            "course_name": "Lab: Artificial Neural Networks",
+            "credits": "(0,1)",
+            "instructor": "Mr. Anees Tariq",
+            "time": "02:00 - 05:00",
+            "room": 154
+          },
+          {
+            "course_code": "AICL 3503",
+            "course_name": "Lab: Machine Learning",
+            "credits": "(0,1)",
+            "instructor": "Mr. Hasaan Mujtaba",
+            "time": "05:00 - 08:00",
+            "room": 155
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "AIC 3501",
+            "course_name": "Artificial Neural Networks",
+            "credits": "(2,0)",
+            "instructor": "Mr. Atif Iftikhar",
+            "time": "03:30 - 05:30",
+            "room": 156
+          },
+          {
+            "course_code": "CSC 2205",
+            "course_name": "Operating Systems",
+            "credits": "(3,0)",
+            "instructor": "Ms. Sarwat Nadeem",
+            "time": "05:30 - 07:00",
+            "room": 157
+          },
+          {
+            "course_code": "AIC 3503",
+            "course_name": "Machine Learning",
+            "credits": "(2,0)",
+            "instructor": "Mr Sohail Abid (VF)",
+            "time": "07:00 - 09:00",
+            "room": 158
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "AIC 4501",
+            "course_name": "Design and Creativity",
+            "credits": "(3,0)",
+            "instructor": "ZEESHAN AFGUN (VF)",
+            "time": "12:30 - 02:00",
+            "room": 159
+          },
+          {
+            "course_code": "CSCL 2205",
+            "course_name": "Lab: Operating Systems",
+            "credits": "(0,1)",
+            "instructor": "Mr. Annas Khalid",
+            "time": "02:00 - 05:00",
+            "room": 160
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-5C": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "AIC 3501",
+            "course_name": "Artificial Neural Networks",
+            "credits": "(2,0)",
+            "instructor": "Ms. Maria Zuraiz",
+            "time": "03:00 - 05:00",
+            "room": 161
+          },
+          {
+            "course_code": "AICL 3501",
+            "course_name": "Lab: Artificial Neural Networks",
+            "credits": "(0,1)",
+            "instructor": "Mr. Hasaan Mujtaba",
+            "time": "05:00 - 08:00",
+            "room": 162
+          },
+          {
+            "course_code": "CSC 2205",
+            "course_name": "Operating Systems",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "06:30 - 08:00",
+            "room": 163
+          },
+          {
+            "course_code": "AIC 3503",
+            "course_name": "Machine Learning",
+            "credits": "(2,0)",
+            "instructor": "Malik Muhmmad Shahid Ali (VF)",
+            "time": "05:00 - 07:00",
+            "room": 164
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "AIC 3502",
+            "course_name": "Knowledge Representation and Reasoning",
+            "credits": "(3,0)",
+            "instructor": "Ms. Zahra Khalid",
+            "time": "03:30 - 05:00",
+            "room": 165
+          },
+          {
+            "course_code": "AIC 4501",
+            "course_name": "Design and Creativity",
+            "credits": "(3,0)",
+            "instructor": "Mr. Ahsan Abbas",
+            "time": "05:00 - 06:30",
+            "room": 166
+          },
+          {
+            "course_code": "AIC 3502",
+            "course_name": "Knowledge Representation and Reasoning",
+            "credits": "(3,0)",
+            "instructor": "Ms. Maria Zuraiz",
+            "time": "08:00 - 09:30",
+            "room": 167
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSCL 2205",
+            "course_name": "Lab: Operating Systems",
+            "credits": "(0,1)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "02:00 - 05:00",
+            "room": 168
+          },
+          {
+            "course_code": "AICL 3503",
+            "course_name": "Lab: Machine Learning",
+            "credits": "(0,1)",
+            "instructor": "Mr. Hasaan Mujtaba",
+            "time": "05:00 - 08:00",
+            "room": 169
+          },
+          {
+            "course_code": "AIC 4501",
+            "course_name": "Design and Creativity",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "03:30 -05:00",
+            "room": 170
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 2205",
+            "course_name": "Operating Systems",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "12:30 - 02:00",
+            "room": 171
+          },
+          {
+            "course_code": "AIC 3502",
+            "course_name": "Knowledge Representation and Reasoning",
+            "credits": "(3,0)",
+            "instructor": "Mr. Ahsan Abbas",
+            "time": "02:00 - 03:30",
+            "room": 172
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-6A": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "CSC 3109",
+            "course_name": "Software Engineering",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "09:30 - 11:00",
+            "room": 173
+          },
+          {
+            "course_code": "Natural Language Processing",
+            "course_name": "Natural Language Processing",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan Khan",
+            "time": "11:00 - 12:30",
+            "room": 174
+          },
+          {
+            "course_code": "AIC 4503",
+            "course_name": "Introduction to Accounting",
+            "credits": "(3,0)",
+            "instructor": "Ms Sundus Israr (VF)",
+            "time": "12:30 - 02:00",
+            "room": 175
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "Natural Language Processing",
+            "course_name": "Natural Language Processing",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan Khan",
+            "time": "03:30 - 05:00",
+            "room": 176
+          },
+          {
+            "course_code": "AIC 4702",
+            "course_name": "Deep Learning",
+            "credits": "(3,0)",
+            "instructor": "Mr. Muslim Rizvi",
+            "time": "05:00 - 06:30",
+            "room": 177
+          },
+          {
+            "course_code": "CSC 1205",
+            "course_name": "Technical and Business Writing",
+            "credits": "(3,0)",
+            "instructor": "Mr Tamiure Shahzad (VF)",
+            "time": "06:30 - 08:00",
+            "room": 178
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "AIC 4702",
+            "course_name": "Deep Learning",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "09:30 - 11:00",
+            "room": 179
+          },
+          {
+            "course_code": "AICL 3602",
+            "course_name": "Lab: Computing Vision",
+            "credits": "(0,1)",
+            "instructor": "Dr. Rizwan Rashid",
+            "time": "11:00 - 02:00",
+            "room": 180
+          },
+          {
+            "course_code": "CSC 1205",
+            "course_name": "Technical and Business Writing",
+            "credits": "(3,0)",
+            "instructor": "Mr Tamiure Shahzad (VF)",
+            "time": "05:30 - 07:00",
+            "room": 181
+          },
+          {
+            "course_code": "AIC 4503",
+            "course_name": "Introduction to Accounting",
+            "credits": "(3,0)",
+            "instructor": "Ms Sundus Israr (VF)",
+            "time": "07:00 - 08:30",
+            "room": 182
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 3109",
+            "course_name": "Software Engineering",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "02:00 - 03:30",
+            "room": 183
+          },
+          {
+            "course_code": "AIC 3602",
+            "course_name": "Computing Vision",
+            "credits": "(2,0)",
+            "instructor": "",
+            "time": "03:30 - 05:30",
+            "room": 184
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-6B": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "AIC 4503",
+            "course_name": "Introduction to Accounting",
+            "credits": "(3,0)",
+            "instructor": "Mr. Humayoon (VF)",
+            "time": "11:00 - 12:30",
+            "room": 185
+          },
+          {
+            "course_code": "AIC 4702",
+            "course_name": "Deep Learning",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan Khan",
+            "time": "12:30 - 02:00",
+            "room": 186
+          },
+          {
+            "course_code": "AICL 3602",
+            "course_name": "Lab: Computing Vision",
+            "credits": "(0,1)",
+            "instructor": "Ms. Sidra Safdar",
+            "time": "02:00 - 05:00",
+            "room": 187
+          },
+          {
+            "course_code": "AIC 4702",
+            "course_name": "Deep Learning",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan Khan",
+            "time": "06:30 - 08:00",
+            "room": 188
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "Natural Language Processing",
+            "course_name": "Natural Language Processing",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "02:00 - 03:30",
+            "room": 189
+          },
+          {
+            "course_code": "AIC 4503",
+            "course_name": "Introduction to Accounting",
+            "credits": "(3,0)",
+            "instructor": "Malik Muhmmad Shahid Ali (VF)",
+            "time": "03:30 - 05:00",
+            "room": 190
+          },
+          {
+            "course_code": "CSC 3109",
+            "course_name": "Software Engineering",
+            "credits": "(3,0)",
+            "instructor": "Mr. Humayoon (VF)",
+            "time": "05:00 - 06:30",
+            "room": 191
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "CSC 3109",
+            "course_name": "Software Engineering",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "11:00 - 12:30",
+            "room": 192
+          },
+          {
+            "course_code": "CSC 1205",
+            "course_name": "Technical and Business Writing",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "12:30 - 02:00",
+            "room": 193
+          },
+          {
+            "course_code": "Natural Language Processing",
+            "course_name": "Natural Language Processing",
+            "credits": "(3,0)",
+            "instructor": "Mr. Humayoon (VF)",
+            "time": "02:00 - 03:30",
+            "room": 194
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 1205",
+            "course_name": "Technical and Business Writing",
+            "credits": "(3,0)",
+            "instructor": "",
+            "time": "02:00 - 03:30",
+            "room": 195
+          },
+          {
+            "course_code": "AIC 3602",
+            "course_name": "Computing Vision",
+            "credits": "(2,0)",
+            "instructor": "",
+            "time": "03:30 - 05:30",
+            "room": 196
+          }
+        ],
+        "Friday": [],
+        "Saturday": []
+      }
+    },
+    "BS(AI)-7A": {
+      "weekly_classes": {
+        "Monday": [
+          {
+            "course_code": "AIC 4805",
+            "course_name": "Speech Processing",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan Khan",
+            "time": "06:30 - 08:00",
+            "room": 197
+          },
+          {
+            "course_code": "AIC 4501",
+            "course_name": "Design and Creativity",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "08:00 - 09:30",
+            "room": 198
+          }
+        ],
+        "Tuesday": [
+          {
+            "course_code": "AIC 4805",
+            "course_name": "Speech Processing",
+            "credits": "(3,0)",
+            "instructor": "Saad Irfan Khan",
+            "time": "06:30 - 08:00",
+            "room": 199
+          },
+          {
+            "course_code": "CSC 4106",
+            "course_name": "Parallel and Distributed Computing",
+            "credits": "(3,0)",
+            "instructor": "Ms. Maryam Mir",
+            "time": "08:00 - 09:30",
+            "room": 200
+          }
+        ],
+        "Wednesday": [
+          {
+            "course_code": "AIC 4501",
+            "course_name": "Design and Creativity",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hafiz Abdul Basit Shah",
+            "time": "02:00 - 03:30",
+            "room": 201
+          },
+          {
+            "course_code": "CSC 4102",
+            "course_name": "Professional Practices",
+            "credits": "(3,0)",
+            "instructor": "Saima Akbar (VF)",
+            "time": "03:30 -05:00",
+            "room": 202
+          }
+        ],
+        "Thursday": [
+          {
+            "course_code": "CSC 4102",
+            "course_name": "Professional Practices",
+            "credits": "(3,0)",
+            "instructor": "Saima Akbar (VF)",
+            "time": "11:00 - 12:30",
+            "room": 203
+          },
+          {
+            "course_code": "CSC 4106",
+            "course_name": "Parallel and Distributed Computing",
+            "credits": "(3,0)",
+            "instructor": "Ms. Maryam Mir",
+            "time": "12:30 - 02:00",
+            "room": 204
+          }
+        ],
+        "Friday": [
+          {
+            "course_code": "AIC 4801",
+            "course_name": "Information Security",
+            "credits": "(3,0)",
+            "instructor": "Mr. Aizaz Raziq",
+            "time": "05:00 - 06:30",
+            "room": 205
+          },
+          {
+            "course_code": "AIC 4504",
+            "course_name": "Organizational Behavior",
+            "credits": "(3,0)",
+            "instructor": "Ms Sundus Israr (VF)",
+            "time": "06:30 - 08:00",
+            "room": 206
+          },
+          {
+            "course_code": "AIC 4805",
+            "course_name": "Speech Processing",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "06:30 - 08:00",
+            "room": 207
+          }
+        ],
+        "Saturday": [
+          {
+            "course_code": "AIC 4801",
+            "course_name": "Information Security",
+            "credits": "(3,0)",
+            "instructor": "Mr. Aizaz Raziq",
+            "time": "05:00 - 06:30",
+            "room": 208
+          },
+          {
+            "course_code": "AIC 4805",
+            "course_name": "Speech Processing",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "08:00 - 09:30",
+            "room": 209
+          }
+        ]
+      }
+    },
+    "BS(AI)-8A": {
+      "weekly_classes": {
+        "Monday": [],
+        "Tuesday": [],
+        "Wednesday": [],
+        "Thursday": [],
+        "Friday": [
+          {
+            "course_code": "AIC 4504",
+            "course_name": "Organizational Behavior",
+            "credits": "(3,0)",
+            "instructor": "Ms Sundus Israr (VF)",
+            "time": "08:00 - 09:30",
+            "room": 210
+          }
+        ],
+        "Saturday": [
+          {
+            "course_code": "AIC 4805",
+            "course_name": "Speech Processing",
+            "credits": "(3,0)",
+            "instructor": "Mr. Hamza Imran",
+            "time": "08:00 - 09:30",
+            "room": 211
+          }
+        ]
+      }
+    }
+  }
+}

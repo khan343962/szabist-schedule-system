@@ -1,0 +1,80 @@
+{
+  "section": "BSAI-3C",
+  "semester": "3rd Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [],
+    "tuesday": [
+      {
+        "course": "CSC 1201 Discrete Mathematical Structures (3,0)",
+        "faculty": "Sarwat Nadeem -",
+        "room": "Hall 01 B",
+        "time": "11:00 AM – 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 2102 Data Structures and Algorithms (3,0)",
+        "faculty": "Hafiz Abdul Basit Shah",
+        "room": "201",
+        "time": "12:30 PM – 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSCL 3206 Lab: Artificial Intelligence (0,1)",
+        "faculty": "Hasaan Mujtaba",
+        "room": "Lab 01",
+        "time": "02:00 PM – 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "wednesday": [
+      {
+        "course": "CSC 1109 Pakistan Studies (2,0)",
+        "faculty": "Aizaz Raziq",
+        "room": "NB-207",
+        "time": "08:00 AM – 10:00 AM",
+        "campus": "SZABIST HMB I-8 MarkazCampus"
+      }
+    ],
+    "thursday": [
+      {
+        "course": "CSC 1202 Multivariate Calculus (3,0)",
+        "faculty": "Saida Faiz",
+        "room": "201",
+        "time": "02:00 PM – 03:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1201 Discrete Mathematical Structures (3,0)",
+        "faculty": "Sarwat Nadeem -",
+        "room": "201",
+        "time": "03:30 PM – 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 2102 Data Structures and Algorithms (3,0)",
+        "faculty": "Mr. Hafiz Abdul Basit Shah",
+        "room": "204",
+        "time": "05:00 PM – 06:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "friday": [],
+    "saturday": [
+      {
+        "course": "CSCL 2102 Lab: Data Structures and Algorithms (0,1)",
+        "faculty": "Annas Khalid",
+        "room": "Digital Lab",
+        "time": "08:00 AM - 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSCL 3105 Lab: Computer Organization and Assembly Language (0,1)",
+        "faculty": "Fiza Fatima",
+        "room": "Digital Lab",
+        "time": "11:00 AM - 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ]
+  }
+}

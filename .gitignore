@@ -1,0 +1,48 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+web_modules/
+
+# Local configuration/secrets
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Large binary files & installers
+*.dmg
+*.exe
+*.pkg
+*.deb
+*.rpm
+
+# Archives & package files
+*.tar.gz
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# App/Database backups & generated data
+database-backup/
+database-backup-*
+deployment-package/
+deployment-package-enhanced/
+mongodb-data/
+.wwebjs_auth/
+
+# Logs & temp files
+*.log
+err.txt
+out.txt
+.DS_Store
+Thumbs.db
+__MACOSX/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*

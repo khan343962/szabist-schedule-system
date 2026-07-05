@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Student Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary-color: #7000FF;
+            --primary-light: #9F56FF;
+            --secondary-color: #00E1FF;
+            --accent-color: #FF3DCA;
+            --success-color: #00D9A6;
+            --warning-color: #FFBD00;
+            --error-color: #FF3D57;
+            --dark-color: #171627;
+            --light-color: #F5F5FA;
+            --bg-color: #FCFCFF;
+            --border-color: #E5E5E5;
+            --sidebar-bg: #1a1b2e;
+            --sidebar-text: #8892b0;
+            --font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 24px;
+            --box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .admin-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--sidebar-bg);
+            color: white;
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .sidebar.collapsed {
+            width: 80px;
+        }
+
+        .sidebar-header {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sidebar-toggle {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-left: auto;
+            padding: 0.5rem;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+        }
+
+        .sidebar-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-menu {
+            padding: 1rem 0;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            color: var(--sidebar-text);
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        .nav-item.active {
+            background: rgba(112, 0, 255, 0.2);
+            color: white;
+        }
+
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-color);
+        }
+
+        .nav-icon {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .nav-text {
+            font-weight: 500;
+        }
+
+        .sidebar.collapsed .nav-text,
+        .sidebar.collapsed .logo-text {
+            display: none;
+        }
+
+        .user-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .user-details {
+            margin-left: 0.75rem;
+            flex: 1;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .user-role {
+            font-size: 0.75rem;
+            color: var(--sidebar-text);
+        }
+
+        .logout-btn {
+            background: none;
+            border: none;
+            color: var(--sidebar-text);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5rem;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 280px;
+            transition: var(--transition);
+            background: var(--bg-color);
+        }
+
+        .sidebar.collapsed + .main-content {
+            margin-left: 80px;
+        }
+
+        .main-header {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-title h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .header-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+            width: 300px;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(112, 0, 255, 0.1);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 1rem;
+            color: #999;
+        }
+
+        /* Page Content */
+        .page-content {
+            padding: 2rem;
+            min-height: calc(100vh - 80px);
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .card-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        /* Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .stat-data h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-data p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Charts */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+        }
+
+        .chart-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--border-radius-sm);
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--light-color);
+            color: var(--dark-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: #e9e9ee;
+        }
+
+        .btn-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--error-color);
+            color: white;
+        }
+
+        /* Forms */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(112, 0, 255, 0.1);
+        }
+
+        /* Tables */
+        .table-container {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: var(--light-color);
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(112, 0, 255, 0.05);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .badge-primary { background: rgba(112, 0, 255, 0.1); color: var(--primary-color); }
+        .badge-success { background: rgba(0, 217, 166, 0.1); color: var(--success-color); }
+        .badge-warning { background: rgba(255, 189, 0, 0.1); color: var(--warning-color); }
+        .badge-danger { background: rgba(255, 61, 87, 0.1); color: var(--error-color); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.show {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-large {
+            max-width: 800px;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            background: var(--light-color);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-footer {
+            padding: 1rem 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            color: white;
+        }
+
+        .btn-view { background-color: var(--primary-color); }
+        .btn-edit { background-color: var(--warning-color); }
+        .btn-delete { background-color: var(--error-color); }
+        
+        .badge-info {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .btn-icon:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Student detail styles */
+        .student-detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .student-detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .student-detail-label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .student-detail-value {
+            color: rgba(23, 22, 39, 0.8);
+            text-align: right;
+        }
+        
+        /* WhatsApp Section Styles */
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-connected {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-connecting {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .status-disconnected {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .status-error {
+            background-color: #f5c6cb;
+            color: #721c24;
+        }
+        
+        #qrCodeContainer img {
+            max-width: 250px;
+            height: auto;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            background: white;
+            transition: var(--transition);
+        }
+        
+        .radio-option:hover {
+            border-color: var(--primary-color);
+            background: rgba(112, 0, 255, 0.05);
+        }
+        
+        .radio-option input[type="radio"]:checked + span {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .radio-option input[type="radio"]:checked {
+            accent-color: var(--primary-color);
+        }
+        
+        .message-history-item {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            background: white;
+        }
+        
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .message-content {
+            background: var(--light-color);
+            padding: 1rem;
+            border-radius: var(--border-radius-sm);
+            margin: 0.5rem 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        
+        .message-status {
+            font-size: 0.8rem;
+        }
+        
+        .success-status {
+            color: var(--success-color);
+        }
+        
+        .error-status {
+            color: var(--error-color);
+        }
+        
+        .bulk-results {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: var(--border-radius-sm);
+            background: var(--light-color);
+        }
+        
+        .result-summary {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .result-item {
+            padding: 0.5rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+        }
+        
+        .result-success {
+            background: rgba(0, 217, 166, 0.1);
+            color: var(--success-color);
+        }
+        
+        .result-error {
+            background: rgba(255, 61, 87, 0.1);
+            color: var(--error-color);
+        }
+        
+        /* Hierarchical Selection Styles */
+        .hierarchy-step {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            background: rgba(255, 255, 255, 0.5);
+            transition: var(--transition);
+        }
+        
+        .hierarchy-step.active {
+            border-color: var(--primary-color);
+            background: rgba(112, 0, 255, 0.05);
+        }
+        
+        .hierarchy-step.completed {
+            border-color: var(--success-color);
+            background: rgba(0, 217, 166, 0.05);
+        }
+        
+        .hierarchy-step label i {
+            margin-right: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .selection-summary {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(112, 0, 255, 0.1), rgba(0, 225, 255, 0.1));
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .selection-summary h5 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .summary-content {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            line-height: 1.5;
+        }
+        
+        .summary-content .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+            background: rgba(112, 0, 255, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+        }
+        
+        /* Promotion Section Styles */
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .filter-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .filtered-count {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .promotion-actions {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .promotion-summary {
+            background: var(--light-color);
+            padding: 1rem;
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .promotion-summary h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .promotion-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .promotion-list li {
+            padding: 0.25rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .alert-warning {
+            background-color: rgba(255, 189, 0, 0.1);
+            border: 1px solid var(--warning-color);
+            color: #856404;
+        }
+        
+        .alert-danger {
+            background-color: rgba(255, 61, 87, 0.1);
+            border: 1px solid var(--error-color);
+            color: #721c24;
+        }
+        
+        .promotion-history-item {
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 1rem;
+            background: white;
+            transition: var(--transition);
+        }
+        
+        .promotion-history-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .promotion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .promotion-type {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .promotion-type.semester {
+            background: rgba(112, 0, 255, 0.1);
+            color: var(--primary-color);
+        }
+        
+        .promotion-type.graduation {
+            background: rgba(0, 217, 166, 0.1);
+            color: var(--success-color);
+        }
+        
+        .promotion-type.rollback {
+            background: rgba(255, 61, 87, 0.1);
+            color: var(--error-color);
+        }
+        
+        .promotion-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .promotion-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .promotion-actions-inline {
+            display: flex;
+            gap: 0.25rem;
+            margin-top: 0.5rem;
+        }
+        
+        .btn-sm {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+        }
+        
+        /* Schedule Management Styles */
+        .schedule-days {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .day-schedule {
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 1rem;
+            background: #f8f9fa;
+        }
+        
+        .day-schedule h5 {
+            margin: 0 0 1rem 0;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .classes-container {
+            margin-bottom: 1rem;
+        }
+        
+        .class-slot {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        
+        .class-slot:last-child {
+            margin-bottom: 0;
+        }
+        
+        .class-slot .remove-class {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--error-color);
+            color: white;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .class-slot .remove-class:hover {
+            background: #dc2626;
+        }
+        
+        .class-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 0.5rem;
+            align-items: end;
+        }
+        
+        .schedule-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .schedule-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .schedule-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .schedule-info h4 {
+            margin: 0;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        .schedule-meta {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.25rem;
+        }
+        
+        .schedule-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+        
+        .day-column {
+            text-align: center;
+        }
+        
+        .day-header {
+            font-weight: 600;
+            color: var(--primary-color);
+            padding: 0.5rem;
+            background: rgba(112, 0, 255, 0.1);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 0.5rem;
+        }
+        
+        .class-item {
+            background: #f1f5f9;
+            padding: 0.5rem;
+            margin-bottom: 0.25rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .class-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .class-course {
+            font-weight: 500;
+            font-size: 0.8rem;
+            line-height: 1.2;
+            margin-bottom: 0.25rem;
+        }
+        
+        .class-details {
+            font-size: 0.75rem;
+            color: #666;
+            line-height: 1.3;
+        }
+        
+        .no-classes {
+            color: #999;
+            font-style: italic;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .schedule-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .modal-large {
+            max-width: 1200px;
+        }
+        
+        /* Advanced Schedule Editor Styles */
+        .schedule-builder {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .schedule-grid-editor {
+            display: grid;
+            grid-template-columns: 100px repeat(6, 1fr);
+            gap: 8px;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            border-radius: var(--border-radius-md);
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        
+        .time-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .time-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            font-weight: 600;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+        }
+        
+        .time-slot {
+            background: #e9ecef;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: var(--border-radius-sm);
+            color: #495057;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .day-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            min-width: 150px;
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+        
+        .btn-add-class {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.8rem;
+        }
+        
+        .btn-add-class:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .drop-zone {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: var(--border-radius-sm);
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        
+        .drop-zone:hover {
+            border-color: var(--primary-color);
+            background: rgba(112, 0, 255, 0.05);
+        }
+        
+        .drop-zone.drag-over {
+            border-color: var(--success-color);
+            background: rgba(0, 217, 166, 0.1);
+            border-style: solid;
+        }
+        
+        .drop-zone::before {
+            content: 'Drop class here';
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+        
+        .drop-zone:hover::before,
+        .drop-zone.drag-over::before {
+            opacity: 1;
+        }
+        
+        .drop-zone.has-class {
+            border: none;
+            background: transparent;
+        }
+        
+        .drop-zone.has-class::before {
+            display: none;
+        }
+        
+        .draggable-class {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius-sm);
+            padding: 0.75rem;
+            cursor: move;
+            transition: var(--transition);
+            user-select: none;
+            position: relative;
+            min-height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .draggable-class:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent-color);
+        }
+        
+        .draggable-class.dragging {
+            opacity: 0.7;
+            transform: rotate(3deg) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+        
+        .class-course {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            margin-bottom: 0.25rem;
+            cursor: text;
+        }
+        
+        .class-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.25rem;
+            font-size: 0.7rem;
+            color: #666;
+        }
+        
+        .class-faculty {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .class-time {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .class-room {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            grid-column: 1 / -1;
+        }
+        
+        .class-actions {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            display: flex;
+            gap: 2px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .draggable-class:hover .class-actions {
+            opacity: 1;
+        }
+        
+        .class-action-btn {
+            width: 20px;
+            height: 20px;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.7rem;
+            transition: var(--transition);
+        }
+        
+        .btn-edit-class {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-delete-class {
+            background: var(--error-color);
+            color: white;
+        }
+        
+        .class-action-btn:hover {
+            transform: scale(1.2);
+        }
+        
+        .schedule-tools {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .editable-field {
+            border: none;
+            background: transparent;
+            width: 100%;
+            font: inherit;
+            color: inherit;
+            cursor: text;
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+        
+        .editable-field:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        .editable-field:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+        
+        .class-duration-indicator {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--secondary-color);
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .schedule-legend {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(112, 0, 255, 0.05);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.8rem;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+        
+        /* Schedule Grid Layout */
+        .schedule-grid-editor {
+            display: grid;
+            grid-template-columns: 120px repeat(6, 1fr);
+            gap: 8px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .time-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .time-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: 16px 8px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+        }
+        
+        .time-slot-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            line-height: 1.3;
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .day-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            min-height: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        
+        .time-slot-header small {
+            opacity: 0.9;
+            font-size: 0.65rem;
+            margin-top: 2px;
+        }
+        
+        /* Add class options in day headers */
+        .add-class-options {
+            display: flex;
+            gap: 3px;
+            margin-top: 4px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn-add-class-type {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            padding: 3px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.6rem;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            white-space: nowrap;
+        }
+        
+        .btn-add-class-type:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+        
+        .btn-add-class-type i {
+            font-size: 0.55rem;
+        }
+        
+        /* Enhanced drop zones for larger time slots */
+        .drop-zone {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            min-height: 150px;
+            padding: 8px;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.75rem;
+            color: #6c757d;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .drop-zone::before {
+            content: '+ Drop classes here';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.5;
+            transition: var(--transition);
+            pointer-events: none;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .drop-zone:hover::before {
+            opacity: 0.8;
+        }
+        
+        .drop-zone.drag-over {
+            border-color: var(--success-color);
+            background: rgba(0, 217, 166, 0.1);
+            border-style: solid;
+            box-shadow: 0 4px 12px rgba(0, 217, 166, 0.15);
+        }
+        
+        .drop-zone.drag-over::before {
+            content: 'Release to add class';
+            opacity: 1;
+        }
+        
+        .drop-zone.has-classes {
+            border-style: solid;
+            border-color: #dee2e6;
+            background: white;
+        }
+        
+        .drop-zone.has-classes::before {
+            display: none;
+        }
+        
+        /* Enhanced class blocks */
+        .draggable-class {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            cursor: move;
+            transition: var(--transition);
+            user-select: none;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            border: 1px solid #e9ecef;
+            border-left: 4px solid var(--primary-color);
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+        }
+        
+        .draggable-class.lab-class {
+            border-left-color: var(--success-color);
+            background: linear-gradient(135deg, #f8fff8, #f0f8f0);
+        }
+        
+        .draggable-class.class-class {
+            border-left-color: var(--primary-color);
+            background: linear-gradient(135deg, #fafbff, #f4f6ff);
+        }
+        
+        .draggable-class:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .draggable-class.dragging {
+            opacity: 0.8;
+            transform: rotate(2deg) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            z-index: 1000;
+        }
+        
+        .class-type-badge {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            background: var(--primary-color);
+            color: white;
+            font-size: 0.55rem;
+            padding: 2px 5px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .class-type-badge.lab {
+            background: var(--success-color);
+        }
+        
+        .class-type-badge.class {
+            background: var(--primary-color);
+        }
+        
+        .class-course {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: var(--dark-color);
+            margin-bottom: 6px;
+            margin-top: 18px;
+            cursor: text;
+            line-height: 1.2;
+        }
+        
+        .class-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            font-size: 0.65rem;
+            color: #666;
+            margin-top: 4px;
+        }
+        
+        .class-meta > div {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .class-faculty, .class-time, .class-room {
+            word-break: break-word;
+            flex: 1;
+        }
+        
+        .class-duration {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: rgba(0, 0, 0, 0.1);
+            color: var(--text-secondary);
+            font-size: 0.55rem;
+            padding: 2px 4px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+        
+        .class-actions {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            display: flex;
+            gap: 2px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .draggable-class:hover .class-actions {
+            opacity: 1;
+        }
+        
+        .class-action-btn {
+            width: 18px;
+            height: 18px;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.6rem;
+            transition: var(--transition);
+        }
+        
+        .btn-edit-class {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-delete-class {
+            background: var(--error-color);
+            color: white;
+        }
+        
+        .class-action-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Schedule Builder Toolbar */
+        .schedule-builder-toolbar {
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .toolbar-section {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        
+        .toolbar-section h6 {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .quick-add-days {
+            display: flex;
+            gap: 0.25rem;
+        }
+        
+        .day-quick-btn {
+            padding: 0.375rem 0.75rem;
+            border: 1px solid var(--border-color);
+            background: var(--background-color);
+            color: var(--text-color);
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: var(--transition);
+            min-width: 40px;
+        }
+        
+        .day-quick-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .schedule-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .schedule-action-btn {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--border-color);
+            background: var(--card-background);
+            color: var(--text-color);
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            transition: var(--transition);
+        }
+        
+        .schedule-action-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .schedule-action-btn.danger {
+            color: var(--error-color);
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+        
+        .schedule-action-btn.danger:hover {
+            background: var(--error-color);
+            color: white;
+            border-color: var(--error-color);
+        }
+        
+        .schedule-action-btn.success {
+            color: var(--success-color);
+            border-color: rgba(39, 174, 96, 0.3);
+        }
+        
+        .schedule-action-btn.success:hover {
+            background: var(--success-color);
+            color: white;
+            border-color: var(--success-color);
+        }
+        
+        @media (max-width: 1024px) {
+            .schedule-grid-editor {
+                grid-template-columns: 100px repeat(6, 1fr);
+                gap: 6px;
+                padding: 12px;
+            }
+            
+            .time-header, .day-header {
+                padding: 8px 4px;
+                font-size: 0.75rem;
+                min-height: 50px;
+            }
+            
+            .time-slot-header {
+                padding: 8px 4px;
+                font-size: 0.65rem;
+                min-height: 70px;
+            }
+            
+            .drop-zone {
+                min-height: 70px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .schedule-grid-editor {
+                grid-template-columns: 80px repeat(3, 1fr);
+                gap: 4px;
+                padding: 8px;
+            }
+            
+            .time-header, .day-header {
+                padding: 6px 2px;
+                font-size: 0.65rem;
+                min-height: 45px;
+            }
+            
+            .time-slot-header {
+                padding: 6px 2px;
+                font-size: 0.6rem;
+                min-height: 60px;
+            }
+            
+            .drop-zone {
+                min-height: 60px;
+            }
+            
+            .draggable-class {
+                padding: 6px;
+                font-size: 0.7rem;
+            }
+            
+            .class-course {
+                font-size: 0.7rem;
+                margin-top: 12px;
+            }
+            
+            .class-meta {
+                font-size: 0.6rem;
+            }
+            
+            .btn-add-class-type {
+                padding: 2px 4px;
+                font-size: 0.5rem;
+            }
+            
+            /* Responsive toolbar */
+            .schedule-builder-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .toolbar-section {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .quick-add-days {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-circle">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span class="logo-text">Admin</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="nav-menu">
+                <div class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-tachometer-alt nav-icon"></i>
+                    <span class="nav-text">Dashboard</span>
+                </div>
+                <div class="nav-item" data-page="students">
+                    <i class="fas fa-user-graduate nav-icon"></i>
+                    <span class="nav-text">Students</span>
+                </div>
+                <div class="nav-item" data-page="whatsapp">
+                    <i class="fab fa-whatsapp nav-icon"></i>
+                    <span class="nav-text">WhatsApp</span>
+                </div>
+                <div class="nav-item" data-page="promotion">
+                    <i class="fas fa-graduation-cap nav-icon"></i>
+                    <span class="nav-text">Promotion</span>
+                </div>
+                <div class="nav-item" data-page="schedules">
+                    <i class="fas fa-calendar-alt nav-icon"></i>
+                    <span class="nav-text">Schedules</span>
+                </div>
+                <div class="nav-item" data-page="settings">
+                    <i class="fas fa-cog nav-icon"></i>
+                    <span class="nav-text">Settings</span>
+                </div>
+            </nav>
+
+            <div class="user-info" style="display: flex; align-items: center;">
+                <div class="user-avatar" id="userAvatar">A</div>
+                <div class="user-details">
+                    <div class="user-name" id="userName">Loading...</div>
+                    <div class="user-role" id="userRole">Admin</div>
+                </div>
+                <button class="logout-btn" id="logoutBtn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title">
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p class="header-subtitle" id="pageSubtitle">Overview of your student management system</p>
+                </div>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search..." id="globalSearch">
+                    </div>
+                </div>
+            </header>
+
+            <div class="page-content">
+                <!-- Dashboard Section -->
+                <section id="dashboard-page" class="page-section active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--primary-light));">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="totalStudents">0</h3>
+                                <p>Total Students</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="newStudents">0</h3>
+                                <p>New This Week</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--success-color), var(--warning-color));">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="totalDepartments">5</h3>
+                                <p>Departments</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--accent-color), var(--error-color));">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="totalAdmins">0</h3>
+                                <p>Admin Users</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <h3 class="chart-title">Student Enrollment Trends</h3>
+                            <canvas id="enrollmentChart"></canvas>
+                        </div>
+                        
+                        <div class="chart-container">
+                            <h3 class="chart-title">Students by Department</h3>
+                            <canvas id="departmentChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Activities</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="recentActivities">
+                                <div class="loading">
+                                    <div class="spinner"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Students Section -->
+                <section id="students-page" class="page-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Student Management</h3>
+                            <button class="btn btn-primary" onclick="refreshStudents()">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-container">
+                                <table class="data-table" id="studentsTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Department</th>
+                                            <th>Program</th>
+                                            <th>Section</th>
+                                            <th>Semester</th>
+                                            <th>Gender</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="studentsTableBody">
+                                        <tr>
+                                            <td colspan="8" style="text-align: center; padding: 3rem;">
+                                                <div class="loading">
+                                                    <div class="spinner"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- WhatsApp Section -->
+                <section id="whatsapp-page" class="page-section">
+                    <!-- Connection Status Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fab fa-whatsapp" style="color: #25D366;"></i> WhatsApp Connection
+                            </h3>
+                            <div id="connectionStatus">
+                                <span class="status-badge status-disconnected">Disconnected</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div id="connectionContent">
+                                <div id="qrCodeSection" style="text-align: center; display: none;">
+                                    <h4 style="margin-bottom: 1rem;">Scan QR Code with WhatsApp</h4>
+                                    <div id="qrCodeContainer" style="margin: 2rem 0;">
+                                        <!-- QR Code will be displayed here -->
+                                    </div>
+                                    <p style="color: #666;">Open WhatsApp on your phone → Menu → Linked Devices → Link a Device</p>
+                                </div>
+                                
+                                <div id="connectionActions" style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+                                    <button id="connectBtn" class="btn btn-primary" onclick="initializeWhatsApp()">
+                                        <i class="fab fa-whatsapp"></i> Connect WhatsApp
+                                    </button>
+                                    <button id="disconnectBtn" class="btn btn-secondary" onclick="disconnectWhatsApp()" style="display: none;">
+                                        <i class="fas fa-unlink"></i> Disconnect
+                                    </button>
+                                    <button id="restartBtn" class="btn btn-warning" onclick="restartWhatsApp()" style="display: none;">
+                                        <i class="fas fa-redo"></i> Restart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Message Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-paper-plane"></i> Quick Message
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="quickMessageForm">
+                                <div class="form-group">
+                                    <label for="quickPhoneNumber">Phone Number</label>
+                                    <input type="tel" id="quickPhoneNumber" class="form-control" 
+                                           placeholder="03XXXXXXXXX or +92XXXXXXXXXX" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quickMessage">Message</label>
+                                    <textarea id="quickMessage" class="form-control" rows="4" 
+                                              placeholder="Type your message here..." required></textarea>
+                                    <small class="form-text text-muted">Character count: <span id="quickMessageCount">0</span></small>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="sendQuickBtn">
+                                    <i class="fab fa-whatsapp"></i> Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Bulk Messaging Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-users"></i> Bulk Messaging
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="bulk-options" style="margin-bottom: 2rem;">
+                                <div class="form-group">
+                                    <label>Send to:</label>
+                                    <div class="radio-group">
+                                        <label class="radio-option">
+                                            <input type="radio" name="bulkTarget" value="all" checked>
+                                            <span>All Students</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="bulkTarget" value="department">
+                                            <span>Entire Department</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="bulkTarget" value="program">
+                                            <span>Entire Program</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="bulkTarget" value="program-semester">
+                                            <span>Program + Semester</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="bulkTarget" value="specific-section">
+                                            <span>Specific Section</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div id="filterOptions" style="display: none;">
+                                    <!-- Step 1: Department Selection -->
+                                    <div class="hierarchy-step" id="departmentStep">
+                                        <div class="form-group">
+                                            <label for="departmentFilter">
+                                                <i class="fas fa-building"></i> 1. Select Department <span class="required">*</span>
+                                            </label>
+                                            <select id="departmentFilter" class="form-control" required>
+                                                <option value="">Choose Department...</option>
+                                                <option value="Management Sciences">Management Sciences</option>
+                                                <option value="Computer Sciences">Computer Sciences</option>
+                                                <option value="Executive Programs">Executive Programs</option>
+                                                <option value="Social Sciences">Social Sciences</option>
+                                                <option value="Media Sciences">Media Sciences</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Step 2: Program Selection -->
+                                    <div class="hierarchy-step" id="programStep" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="programFilter">
+                                                <i class="fas fa-graduation-cap"></i> 2. Select Program <span class="required">*</span>
+                                            </label>
+                                            <select id="programFilter" class="form-control" required>
+                                                <option value="">Choose Program...</option>
+                                            </select>
+                                            <small class="form-text text-muted">Programs will load based on selected department</small>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Step 3: Semester Selection (for program-semester and specific-section) -->
+                                    <div class="hierarchy-step" id="semesterStep" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="semesterFilter">
+                                                <i class="fas fa-calendar-alt"></i> 3. Select Semester <span class="required">*</span>
+                                            </label>
+                                            <select id="semesterFilter" class="form-control" required>
+                                                <option value="">Choose Semester...</option>
+                                                <option value="1">1st Semester</option>
+                                                <option value="2">2nd Semester</option>
+                                                <option value="3">3rd Semester</option>
+                                                <option value="4">4th Semester</option>
+                                                <option value="5">5th Semester</option>
+                                                <option value="6">6th Semester</option>
+                                                <option value="7">7th Semester</option>
+                                                <option value="8">8th Semester</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Step 4: Section Selection (for specific-section only) -->
+                                    <div class="hierarchy-step" id="sectionStep" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="sectionFilter">
+                                                <i class="fas fa-users"></i> 4. Select Section <span class="required">*</span>
+                                            </label>
+                                            <select id="sectionFilter" class="form-control" required>
+                                                <option value="">Choose Section...</option>
+                                                <option value="A">Section A</option>
+                                                <option value="B">Section B</option>
+                                                <option value="C">Section C</option>
+                                                <option value="D">Section D</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Selection Summary -->
+                                    <div class="selection-summary" id="selectionSummary" style="display: none;">
+                                        <h5><i class="fas fa-info-circle"></i> Selection Summary:</h5>
+                                        <div id="summaryText" class="summary-content"></div>
+                                    </div>
+                                </div>
+                                
+                                <div id="recipientCount" style="margin: 1rem 0; padding: 1rem; background: var(--light-color); border-radius: var(--border-radius-sm);">
+                                    <strong>Recipients: </strong><span id="recipientCountNumber">Loading...</span> students
+                                </div>
+                            </div>
+                            
+                            <form id="bulkMessageForm">
+                                <div class="form-group">
+                                    <label for="bulkMessage">Message</label>
+                                    <textarea id="bulkMessage" class="form-control" rows="5" 
+                                              placeholder="Type your message here..." required></textarea>
+                                    <small class="form-text text-muted">Character count: <span id="bulkMessageCount">0</span></small>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="sendBulkBtn">
+                                    <i class="fab fa-whatsapp"></i> Send Bulk Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Message History Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-history"></i> Message History
+                            </h3>
+                            <button class="btn btn-secondary" onclick="clearMessageHistory()">
+                                <i class="fas fa-trash"></i> Clear History
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div id="messageHistory">
+                                <p style="text-align: center; color: #666; padding: 2rem;">No messages sent yet</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Promotion Section -->
+                <section id="promotion-page" class="page-section">
+                    <!-- Promotion Statistics -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--success-color), var(--primary-color));">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="activeStudentsCount">0</h3>
+                                <p>Active Students</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="totalPromotions">0</h3>
+                                <p>Total Promotions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--warning-color), var(--success-color));">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="graduatedStudents">0</h3>
+                                <p>Graduated</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--error-color), var(--warning-color));">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="rollbackCount">0</h3>
+                                <p>Rollbacks</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Student Filter Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-filter"></i> Filter Students for Promotion
+                            </h3>
+                            <button class="btn btn-secondary" id="clearFiltersBtn" onclick="clearPromotionFilters()">
+                                <i class="fas fa-times"></i> Clear Filters
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="filter-grid">
+                                <div class="form-group">
+                                    <label for="promotionDepartmentFilter">Department</label>
+                                    <select id="promotionDepartmentFilter" class="form-control">
+                                        <option value="">All Departments</option>
+                                        <option value="Management Sciences">Management Sciences</option>
+                                        <option value="Computer Sciences">Computer Sciences</option>
+                                        <option value="Executive Programs">Executive Programs</option>
+                                        <option value="Social Sciences">Social Sciences</option>
+                                        <option value="Media Sciences">Media Sciences</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="promotionProgramFilter">Program</label>
+                                    <select id="promotionProgramFilter" class="form-control">
+                                        <option value="">All Programs</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="promotionSemesterFilter">Current Semester</label>
+                                    <select id="promotionSemesterFilter" class="form-control">
+                                        <option value="">All Semesters</option>
+                                        <option value="1">1st Semester</option>
+                                        <option value="2">2nd Semester</option>
+                                        <option value="3">3rd Semester</option>
+                                        <option value="4">4th Semester</option>
+                                        <option value="5">5th Semester</option>
+                                        <option value="6">6th Semester</option>
+                                        <option value="7">7th Semester</option>
+                                        <option value="8">8th Semester</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="promotionSectionFilter">Section</label>
+                                    <select id="promotionSectionFilter" class="form-control">
+                                        <option value="">All Sections</option>
+                                        <option value="A">Section A</option>
+                                        <option value="B">Section B</option>
+                                        <option value="C">Section C</option>
+                                        <option value="D">Section D</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-actions" style="margin-top: 1.5rem;">
+                                <button class="btn btn-primary" id="filterStudentsBtn" onclick="filterStudentsForPromotion()">
+                                    <i class="fas fa-search"></i> Find Students
+                                </button>
+                                <span id="filteredCount" class="filtered-count" style="margin-left: 1rem;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Students List for Promotion -->
+                    <div class="card" id="promotionStudentsCard" style="display: none;">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-users"></i> Students Ready for Promotion
+                            </h3>
+                            <div class="promotion-actions">
+                                <button class="btn btn-secondary" id="selectAllBtn" onclick="selectAllStudents()">
+                                    <i class="fas fa-check-square"></i> Select All
+                                </button>
+                                <button class="btn btn-secondary" id="deselectAllBtn" onclick="deselectAllStudents()">
+                                    <i class="fas fa-square"></i> Deselect All
+                                </button>
+                                <button class="btn btn-primary" id="bulkPromoteBtn" onclick="showPromotionModal()" disabled>
+                                    <i class="fas fa-arrow-up"></i> Promote Selected (<span id="selectedCount">0</span>)
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-container">
+                                <table class="data-table" id="promotionStudentsTable">
+                                    <thead>
+                                        <tr>
+                                            <th width="40px">
+                                                <input type="checkbox" id="masterCheckbox" onchange="toggleAllSelection()">
+                                            </th>
+                                            <th>Name</th>
+                                            <th>Reg Number</th>
+                                            <th>Department</th>
+                                            <th>Program</th>
+                                            <th>Current Semester</th>
+                                            <th>Section</th>
+                                            <th>Next Semester</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="promotionStudentsTableBody">
+                                        <!-- Dynamic content -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Promotion History -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-history"></i> Recent Promotions
+                            </h3>
+                            <button class="btn btn-secondary" onclick="loadPromotionHistory()">
+                                <i class="fas fa-refresh"></i> Refresh
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div id="promotionHistoryContainer">
+                                <div class="loading" style="text-align: center; padding: 2rem;">
+                                    <div class="spinner"></div>
+                                    <p>Loading promotion history...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Schedules Section -->
+                <section id="schedules-page" class="page-section">
+                    <!-- Schedule Statistics -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--success-color), var(--secondary-color));">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="totalSchedules">0</h3>
+                                <p>Total Schedules</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color));">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="scheduleDepartments">0</h3>
+                                <p>Departments</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--warning-color), var(--primary-color));">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="schedulePrograms">0</h3>
+                                <p>Programs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, var(--accent-color), var(--error-color));">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <div class="stat-data">
+                                <h3 id="scheduleSemesters">0</h3>
+                                <p>Semesters</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Schedule Filter Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-filter"></i> Filter Schedules
+                            </h3>
+                            <div style="display: flex; gap: 1rem;">
+                                <button class="btn btn-secondary" id="clearScheduleFiltersBtn" onclick="clearScheduleFilters()">
+                                    <i class="fas fa-times"></i> Clear Filters
+                                </button>
+                                <button class="btn btn-success" id="addScheduleBtn" onclick="showAddScheduleModal()">
+                                    <i class="fas fa-plus"></i> Add Schedule
+                                </button>
+                                <button class="btn btn-info" id="importSchedulesBtn" onclick="showImportModal()">
+                                    <i class="fas fa-upload"></i> Import Schedules
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="filter-grid">
+                                <div class="form-group">
+                                    <label for="scheduleDepartmentFilter">Department</label>
+                                    <select id="scheduleDepartmentFilter" class="form-control">
+                                        <option value="">All Departments</option>
+                                        <option value="Management Sciences">Management Sciences</option>
+                                        <option value="Computer Sciences">Computer Sciences</option>
+                                        <option value="Executive Programs">Executive Programs</option>
+                                        <option value="Social Sciences">Social Sciences</option>
+                                        <option value="Media Sciences">Media Sciences</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="scheduleProgramFilter">Program</label>
+                                    <select id="scheduleProgramFilter" class="form-control">
+                                        <option value="">All Programs</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="scheduleSemesterFilter">Semester</label>
+                                    <select id="scheduleSemesterFilter" class="form-control">
+                                        <option value="">All Semesters</option>
+                                        <option value="1">1st Semester</option>
+                                        <option value="2">2nd Semester</option>
+                                        <option value="3">3rd Semester</option>
+                                        <option value="4">4th Semester</option>
+                                        <option value="5">5th Semester</option>
+                                        <option value="6">6th Semester</option>
+                                        <option value="7">7th Semester</option>
+                                        <option value="8">8th Semester</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="scheduleSectionFilter">Section</label>
+                                    <select id="scheduleSectionFilter" class="form-control">
+                                        <option value="">All Sections</option>
+                                        <option value="A">Section A</option>
+                                        <option value="B">Section B</option>
+                                        <option value="C">Section C</option>
+                                        <option value="D">Section D</option>
+                                        <option value="E">Section E</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-actions" style="margin-top: 1.5rem;">
+                                <button class="btn btn-primary" id="filterSchedulesBtn" onclick="filterSchedules()">
+                                    <i class="fas fa-search"></i> Search Schedules
+                                </button>
+                                <span id="scheduleFilteredCount" class="filtered-count" style="margin-left: 1rem;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Schedules List -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fas fa-calendar-week"></i> Class Schedules
+                            </h3>
+                            <button class="btn btn-secondary" onclick="loadSchedules()">
+                                <i class="fas fa-refresh"></i> Refresh
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div id="schedulesContainer">
+                                <div class="loading" style="text-align: center; padding: 2rem;">
+                                    <div class="spinner"></div>
+                                    <p>Loading schedules...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Schedule WhatsApp Messaging -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fab fa-whatsapp"></i> Send Schedules via WhatsApp
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="filter-grid">
+                                <div class="form-group">
+                                    <label for="whatsappScheduleDepartment">Department</label>
+                                    <select id="whatsappScheduleDepartment" class="form-control">
+                                        <option value="">Select Department</option>
+                                        <option value="Management Sciences">Management Sciences</option>
+                                        <option value="Computer Sciences">Computer Sciences</option>
+                                        <option value="Executive Programs">Executive Programs</option>
+                                        <option value="Social Sciences">Social Sciences</option>
+                                        <option value="Media Sciences">Media Sciences</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="whatsappScheduleProgram">Program</label>
+                                    <select id="whatsappScheduleProgram" class="form-control">
+                                        <option value="">Select Program</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="whatsappScheduleSemester">Semester</label>
+                                    <select id="whatsappScheduleSemester" class="form-control">
+                                        <option value="">Select Semester</option>
+                                        <option value="1">1st Semester</option>
+                                        <option value="2">2nd Semester</option>
+                                        <option value="3">3rd Semester</option>
+                                        <option value="4">4th Semester</option>
+                                        <option value="5">5th Semester</option>
+                                        <option value="6">6th Semester</option>
+                                        <option value="7">7th Semester</option>
+                                        <option value="8">8th Semester</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="whatsappScheduleSection">Section</label>
+                                    <select id="whatsappScheduleSection" class="form-control">
+                                        <option value="">Select Section</option>
+                                        <option value="A">Section A</option>
+                                        <option value="B">Section B</option>
+                                        <option value="C">Section C</option>
+                                        <option value="D">Section D</option>
+                                        <option value="E">Section E</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" style="margin-top: 1rem;">
+                                <label for="scheduleDaySelect">Day</label>
+                                <select id="scheduleDaySelect" class="form-control">
+                                    <option value="">Select Day (Optional - sends full week if empty)</option>
+                                    <option value="monday">Monday</option>
+                                    <option value="tuesday">Tuesday</option>
+                                    <option value="wednesday">Wednesday</option>
+                                    <option value="thursday">Thursday</option>
+                                    <option value="friday">Friday</option>
+                                    <option value="saturday">Saturday</option>
+                                </select>
+                            </div>
+                            
+                            <div style="margin-top: 1.5rem;">
+                                <button class="btn btn-success" id="sendScheduleBtn" onclick="sendScheduleToStudents()">
+                                    <i class="fab fa-whatsapp"></i> Send Schedule to Students
+                                </button>
+                                <span id="scheduleStudentCount" class="filtered-count" style="margin-left: 1rem;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings-page" class="page-section">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Account Settings</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Change Password</label>
+                                    <form id="changePasswordForm">
+                                        <div class="form-group">
+                                            <label for="currentPassword">Current Password</label>
+                                            <input type="password" id="currentPassword" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="newPassword">New Password</label>
+                                            <input type="password" id="newPassword" class="form-control" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="confirmPassword">Confirm Password</label>
+                                            <input type="password" id="confirmPassword" class="form-control" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-save"></i> Change Password
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="adminManagementCard" style="display: none;">
+                        <div class="card-header">
+                            <h3 class="card-title">Admin Management</h3>
+                            <button class="btn btn-primary" onclick="showCreateAdminModal()">
+                                <i class="fas fa-plus"></i> Add Admin
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-container">
+                                <table class="data-table" id="adminsTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Created</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="adminsTableBody">
+                                        <tr>
+                                            <td colspan="5" style="text-align: center; padding: 2rem;">
+                                                <div class="loading">
+                                                    <div class="spinner"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- View Student Modal -->
+    <div class="modal" id="viewStudentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Student Details</h3>
+                <button class="close-modal" onclick="closeModal('viewStudentModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="viewStudentBody">
+                <!-- Student details will be populated here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('viewStudentModal')">Close</button>
+                <button class="btn btn-primary" id="editFromViewBtn">Edit Student</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Student Modal -->
+    <div class="modal" id="editStudentModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Student</h3>
+                <button class="close-modal" onclick="closeModal('editStudentModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editStudentForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="editStudentName">Student Name <span style="color: var(--error-color);">*</span></label>
+                            <input type="text" id="editStudentName" name="studentName" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentEmail">Email Address <span style="color: var(--error-color);">*</span></label>
+                            <input type="email" id="editStudentEmail" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentPhone">Phone Number <span style="color: var(--error-color);">*</span></label>
+                            <input type="tel" id="editStudentPhone" name="phoneNumber" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentDepartment">Department <span style="color: var(--error-color);">*</span></label>
+                            <select id="editStudentDepartment" name="department" class="form-control" required>
+                                <option value="">Select Department</option>
+                                <option value="Management Sciences">Management Sciences</option>
+                                <option value="Computer Sciences">Computer Sciences</option>
+                                <option value="Executive Programs">Executive Programs</option>
+                                <option value="Social Sciences">Social Sciences</option>
+                                <option value="Media Sciences">Media Sciences</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentProgram">Program <span style="color: var(--error-color);">*</span></label>
+                            <select id="editStudentProgram" name="program" class="form-control" required>
+                                <option value="">Select Department First</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentSection">Section <span style="color: var(--error-color);">*</span></label>
+                            <select id="editStudentSection" name="section" class="form-control" required>
+                                <option value="">Select Section</option>
+                                <option value="A">Section A</option>
+                                <option value="B">Section B</option>
+                                <option value="C">Section C</option>
+                                <option value="D">Section D</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentSemester">Semester <span style="color: var(--error-color);">*</span></label>
+                            <select id="editStudentSemester" name="semester" class="form-control" required>
+                                <option value="">Select Semester</option>
+                                <option value="1">1st Semester</option>
+                                <option value="2">2nd Semester</option>
+                                <option value="3">3rd Semester</option>
+                                <option value="4">4th Semester</option>
+                                <option value="5">5th Semester</option>
+                                <option value="6">6th Semester</option>
+                                <option value="7">7th Semester</option>
+                                <option value="8">8th Semester</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentGender">Gender <span style="color: var(--error-color);">*</span></label>
+                            <select id="editStudentGender" name="gender" class="form-control" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentDob">Date of Birth <span style="color: var(--error-color);">*</span></label>
+                            <input type="date" id="editStudentDob" name="dob" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editStudentRegNumber">Registration Number <span style="color: var(--error-color);">*</span></label>
+                            <input type="text" id="editStudentRegNumber" name="regNumber" class="form-control" required>
+                        </div>
+                    </div>
+                    <input type="hidden" id="editStudentId" name="id">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('editStudentModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="saveStudentChanges()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Admin Modal -->
+    <div class="modal" id="createAdminModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create New Admin</h3>
+                <button class="close-modal" onclick="closeModal('createAdminModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="createAdminForm">
+                    <div class="form-group">
+                        <label for="adminUsername">Username</label>
+                        <input type="text" id="adminUsername" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminEmail">Email</label>
+                        <input type="email" id="adminEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminRole">Role</label>
+                        <select id="adminRole" class="form-control" required>
+                            <option value="admin">Admin</option>
+                            <option value="super_admin">Super Admin</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('createAdminModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="createAdmin()">Create Admin</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promotion Modal -->
+    <div class="modal" id="promotionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Promote Students</h3>
+                <button class="close-modal" onclick="closeModal('promotionModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="promotion-summary" id="promotionSummary">
+                    <!-- Dynamic content will be populated here -->
+                </div>
+                
+                <form id="promotionForm">
+                    <div class="form-group">
+                        <label for="promotionType">Promotion Type</label>
+                        <select id="promotionType" class="form-control" onchange="handlePromotionTypeChange()">
+                            <option value="automatic">Automatic (Next Semester)</option>
+                            <option value="custom">Custom Semester</option>
+                            <option value="graduation">Graduate (Final Year)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="customSemesterGroup" style="display: none;">
+                        <label for="customSemester">Target Semester</label>
+                        <select id="customSemester" class="form-control">
+                            <option value="1">1st Semester</option>
+                            <option value="2">2nd Semester</option>
+                            <option value="3">3rd Semester</option>
+                            <option value="4">4th Semester</option>
+                            <option value="5">5th Semester</option>
+                            <option value="6">6th Semester</option>
+                            <option value="7">7th Semester</option>
+                            <option value="8">8th Semester</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="newSectionGroup">
+                        <label for="newSection">New Section (Optional)</label>
+                        <select id="newSection" class="form-control">
+                            <option value="">Keep Current Section</option>
+                            <option value="A">Section A</option>
+                            <option value="B">Section B</option>
+                            <option value="C">Section C</option>
+                            <option value="D">Section D</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="promotionNotes">Notes (Optional)</label>
+                        <textarea id="promotionNotes" class="form-control" rows="3" 
+                                  placeholder="Add any notes about this promotion batch..."></textarea>
+                    </div>
+                </form>
+                
+                <div class="promotion-warning" id="graduationWarning" style="display: none;">
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <strong>Graduation Notice:</strong> Some students will be marked as graduated after this promotion.
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('promotionModal')">Cancel</button>
+                <button class="btn btn-primary" id="confirmPromotionBtn" onclick="confirmPromotion()">
+                    <i class="fas fa-arrow-up"></i> Promote Students
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rollback Confirmation Modal -->
+    <div class="modal" id="rollbackModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Rollback Promotion</h3>
+                <button class="close-modal" onclick="closeModal('rollbackModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <strong>Warning:</strong> This action will revert the student back to their previous semester and section.
+                </div>
+                
+                <div id="rollbackStudentInfo">
+                    <!-- Student info will be populated here -->
+                </div>
+                
+                <div class="form-group">
+                    <label for="rollbackReason">Reason for Rollback <span style="color: var(--error-color);">*</span></label>
+                    <textarea id="rollbackReason" class="form-control" rows="3" 
+                              placeholder="Please provide a reason for rolling back this promotion..." required></textarea>
+                </div>
+                
+                <input type="hidden" id="rollbackPromotionId">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('rollbackModal')">Cancel</button>
+                <button class="btn btn-danger" onclick="confirmRollback()">
+                    <i class="fas fa-undo"></i> Confirm Rollback
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Schedule Modal -->
+    <div class="modal" id="scheduleModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 class="modal-title" id="scheduleModalTitle">Add Schedule</h3>
+                <button class="close-modal" onclick="closeModal('scheduleModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="scheduleForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="scheduleDepartment">Department <span style="color: var(--error-color);">*</span></label>
+                            <select id="scheduleDepartment" name="department" class="form-control" required>
+                                <option value="">Select Department</option>
+                                <option value="Management Sciences">Management Sciences</option>
+                                <option value="Computer Sciences">Computer Sciences</option>
+                                <option value="Executive Programs">Executive Programs</option>
+                                <option value="Social Sciences">Social Sciences</option>
+                                <option value="Media Sciences">Media Sciences</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="scheduleProgram">Program <span style="color: var(--error-color);">*</span></label>
+                            <input type="text" id="scheduleProgram" name="program" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="scheduleSemester">Semester <span style="color: var(--error-color);">*</span></label>
+                            <select id="scheduleSemester" name="semester" class="form-control" required>
+                                <option value="">Select Semester</option>
+                                <option value="1">1st Semester</option>
+                                <option value="2">2nd Semester</option>
+                                <option value="3">3rd Semester</option>
+                                <option value="4">4th Semester</option>
+                                <option value="5">5th Semester</option>
+                                <option value="6">6th Semester</option>
+                                <option value="7">7th Semester</option>
+                                <option value="8">8th Semester</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="scheduleSection">Section <span style="color: var(--error-color);">*</span></label>
+                            <select id="scheduleSection" name="section" class="form-control" required>
+                                <option value="">Select Section</option>
+                                <option value="A">Section A</option>
+                                <option value="B">Section B</option>
+                                <option value="C">Section C</option>
+                                <option value="D">Section D</option>
+                                <option value="E">Section E</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="scheduleUniversity">University</label>
+                            <input type="text" id="scheduleUniversity" name="university" class="form-control" 
+                                   value="SZABIST University, Islamabad Campus">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Weekly Schedule Builder</h4>
+                        
+                        <!-- Schedule Builder Toolbar -->
+                        <div class="schedule-builder-toolbar">
+                            <div class="toolbar-section">
+                                <h6>Quick Add:</h6>
+                                <div class="quick-add-days">
+                                    <button type="button" class="day-quick-btn" onclick="addQuickClass('monday')">Mon</button>
+                                    <button type="button" class="day-quick-btn" onclick="addQuickClass('tuesday')">Tue</button>
+                                    <button type="button" class="day-quick-btn" onclick="addQuickClass('wednesday')">Wed</button>
+                                    <button type="button" class="day-quick-btn" onclick="addQuickClass('thursday')">Thu</button>
+                                    <button type="button" class="day-quick-btn" onclick="addQuickClass('friday')">Fri</button>
+                                    <button type="button" class="day-quick-btn" onclick="addQuickClass('saturday')">Sat</button>
+                                </div>
+                            </div>
+                            
+                            <div class="toolbar-section">
+                                <h6>Actions:</h6>
+                                <div class="schedule-actions">
+                                    <button type="button" class="schedule-action-btn" onclick="autoArrangeSchedule()" title="Auto arrange classes by time">
+                                        <i class="fas fa-magic"></i> Arrange
+                                    </button>
+                                    <button type="button" class="schedule-action-btn success" onclick="previewSchedule()" title="Preview schedule">
+                                        <i class="fas fa-eye"></i> Preview
+                                    </button>
+                                    <button type="button" class="schedule-action-btn danger" onclick="clearAllClasses()" title="Clear all classes">
+                                        <i class="fas fa-trash"></i> Clear
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="schedule-builder">
+                            <div class="schedule-grid-editor">
+                                <div class="time-column">
+                                    <div class="time-header">Time Slot</div>
+                                    <div class="time-slot-header" data-slot="1">
+                                        <strong>Slot 1</strong><br>
+                                        <small>8:00 AM - 11:00 AM</small>
+                                    </div>
+                                    <div class="time-slot-header" data-slot="2">
+                                        <strong>Slot 2</strong><br>
+                                        <small>11:00 AM - 2:00 PM</small>
+                                    </div>
+                                    <div class="time-slot-header" data-slot="3">
+                                        <strong>Slot 3</strong><br>
+                                        <small>2:00 PM - 5:00 PM</small>
+                                    </div>
+                                    <div class="time-slot-header" data-slot="4">
+                                        <strong>Slot 4/5</strong><br>
+                                        <small>5:00 PM - 9:30 PM</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="day-column" data-day="monday">
+                                    <div class="day-header">
+                                        <i class="fas fa-calendar-day"></i> Monday
+                                        <div class="add-class-options">
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('monday', 'class')" title="Add 1.5hr Class">
+                                                <i class="fas fa-book"></i> Class
+                                            </button>
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('monday', 'lab')" title="Add 3hr Lab">
+                                                <i class="fas fa-flask"></i> Lab
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="drop-zone" data-slot="1" data-day="monday"></div>
+                                    <div class="drop-zone" data-slot="2" data-day="monday"></div>
+                                    <div class="drop-zone" data-slot="3" data-day="monday"></div>
+                                    <div class="drop-zone" data-slot="4" data-day="monday"></div>
+                                </div>
+                                
+                                <div class="day-column" data-day="tuesday">
+                                    <div class="day-header">
+                                        <i class="fas fa-calendar-day"></i> Tuesday
+                                        <div class="add-class-options">
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('tuesday', 'class')" title="Add 1.5hr Class">
+                                                <i class="fas fa-book"></i> Class
+                                            </button>
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('tuesday', 'lab')" title="Add 3hr Lab">
+                                                <i class="fas fa-flask"></i> Lab
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="drop-zone" data-slot="1" data-day="tuesday"></div>
+                                    <div class="drop-zone" data-slot="2" data-day="tuesday"></div>
+                                    <div class="drop-zone" data-slot="3" data-day="tuesday"></div>
+                                    <div class="drop-zone" data-slot="4" data-day="tuesday"></div>
+                                </div>
+                                
+                                <div class="day-column" data-day="wednesday">
+                                    <div class="day-header">
+                                        <i class="fas fa-calendar-day"></i> Wednesday
+                                        <div class="add-class-options">
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('wednesday', 'class')" title="Add 1.5hr Class">
+                                                <i class="fas fa-book"></i> Class
+                                            </button>
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('wednesday', 'lab')" title="Add 3hr Lab">
+                                                <i class="fas fa-flask"></i> Lab
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="drop-zone" data-slot="1" data-day="wednesday"></div>
+                                    <div class="drop-zone" data-slot="2" data-day="wednesday"></div>
+                                    <div class="drop-zone" data-slot="3" data-day="wednesday"></div>
+                                    <div class="drop-zone" data-slot="4" data-day="wednesday"></div>
+                                </div>
+                                
+                                <div class="day-column" data-day="thursday">
+                                    <div class="day-header">
+                                        <i class="fas fa-calendar-day"></i> Thursday
+                                        <div class="add-class-options">
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('thursday', 'class')" title="Add 1.5hr Class">
+                                                <i class="fas fa-book"></i> Class
+                                            </button>
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('thursday', 'lab')" title="Add 3hr Lab">
+                                                <i class="fas fa-flask"></i> Lab
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="drop-zone" data-slot="1" data-day="thursday"></div>
+                                    <div class="drop-zone" data-slot="2" data-day="thursday"></div>
+                                    <div class="drop-zone" data-slot="3" data-day="thursday"></div>
+                                    <div class="drop-zone" data-slot="4" data-day="thursday"></div>
+                                </div>
+                                
+                                <div class="day-column" data-day="friday">
+                                    <div class="day-header">
+                                        <i class="fas fa-calendar-day"></i> Friday
+                                        <div class="add-class-options">
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('friday', 'class')" title="Add 1.5hr Class">
+                                                <i class="fas fa-book"></i> Class
+                                            </button>
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('friday', 'lab')" title="Add 3hr Lab">
+                                                <i class="fas fa-flask"></i> Lab
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="drop-zone" data-slot="1" data-day="friday"></div>
+                                    <div class="drop-zone" data-slot="2" data-day="friday"></div>
+                                    <div class="drop-zone" data-slot="3" data-day="friday"></div>
+                                    <div class="drop-zone" data-slot="4" data-day="friday"></div>
+                                </div>
+                                
+                                <div class="day-column" data-day="saturday">
+                                    <div class="day-header">
+                                        <i class="fas fa-calendar-day"></i> Saturday
+                                        <div class="add-class-options">
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('saturday', 'class')" title="Add 1.5hr Class">
+                                                <i class="fas fa-book"></i> Class
+                                            </button>
+                                            <button type="button" class="btn-add-class-type" onclick="addClassSlot('saturday', 'lab')" title="Add 3hr Lab">
+                                                <i class="fas fa-flask"></i> Lab
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="drop-zone" data-slot="1" data-day="saturday"></div>
+                                    <div class="drop-zone" data-slot="2" data-day="saturday"></div>
+                                    <div class="drop-zone" data-slot="3" data-day="saturday"></div>
+                                    <div class="drop-zone" data-slot="4" data-day="saturday"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="schedule-tools">
+                                <button type="button" class="btn btn-sm btn-info" onclick="autoArrangeSchedule()">
+                                    <i class="fas fa-magic"></i> Auto Arrange
+                                </button>
+                                <button type="button" class="btn btn-sm btn-warning" onclick="clearAllClasses()">
+                                    <i class="fas fa-trash"></i> Clear All
+                                </button>
+                                <button type="button" class="btn btn-sm btn-success" onclick="previewSchedule()">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Legacy class containers (hidden, for data storage) -->
+                    <div style="display: none;">
+                        <div id="mondayClasses"></div>
+                        <div id="tuesdayClasses"></div>
+                        <div id="wednesdayClasses"></div>
+                        <div id="thursdayClasses"></div>
+                        <div id="fridayClasses"></div>
+                        <div id="saturdayClasses"></div>
+                    </div>
+                    
+                    <input type="hidden" id="scheduleId" name="id">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('scheduleModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="saveSchedule()" id="saveScheduleBtn">Save Schedule</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Schedules Modal -->
+    <div class="modal" id="importModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Import Schedules</h3>
+                <button class="close-modal" onclick="closeModal('importModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="importForm">
+                    <div class="form-group">
+                        <label for="importDepartment">Department <span style="color: var(--error-color);">*</span></label>
+                        <select id="importDepartment" name="department" class="form-control" required>
+                            <option value="">Select Department</option>
+                            <option value="Management Sciences">Management Sciences</option>
+                            <option value="Computer Sciences">Computer Sciences</option>
+                            <option value="Executive Programs">Executive Programs</option>
+                            <option value="Social Sciences">Social Sciences</option>
+                            <option value="Media Sciences">Media Sciences</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="importProgram">Program <span style="color: var(--error-color);">*</span></label>
+                        <input type="text" id="importProgram" name="program" class="form-control" required 
+                               placeholder="e.g., BS Artificial Intelligence">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="importFile">JSON File <span style="color: var(--error-color);">*</span></label>
+                        <input type="file" id="importFile" name="file" class="form-control" 
+                               accept=".json" multiple required>
+                        <small class="form-text">Select one or more JSON schedule files to import</small>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i>
+                        <strong>Note:</strong> JSON files should contain schedule objects with the same format as your existing schedules.
+                        Existing schedules for the same section will be updated.
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('importModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="importSchedules()">Import Schedules</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- View Schedule Modal -->
+    <div class="modal" id="viewScheduleModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 class="modal-title">Schedule Details</h3>
+                <button class="close-modal" onclick="closeModal('viewScheduleModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="viewScheduleBody">
+                <!-- Schedule details will be populated here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('viewScheduleModal')">Close</button>
+                <button class="btn btn-primary" id="editScheduleFromViewBtn">Edit Schedule</button>
+                <button class="btn btn-success" id="sendScheduleFromViewBtn">
+                    <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Class Details Edit Modal -->
+    <div class="modal" id="classEditModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Class Details</h3>
+                <button class="close-modal" onclick="closeModal('classEditModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="classEditForm">
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group">
+                            <label for="editClassCourse">Course Name <span style="color: var(--error-color);">*</span></label>
+                            <input type="text" id="editClassCourse" class="form-control" placeholder="e.g., Data Structures" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editClassType">Class Type</label>
+                            <select id="editClassType" class="form-control">
+                                <option value="class">Regular Class (1.5 hours)</option>
+                                <option value="lab">Lab Session (3 hours)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editClassFaculty">Faculty Name <span style="color: var(--error-color);">*</span></label>
+                            <input type="text" id="editClassFaculty" class="form-control" placeholder="e.g., Dr. John Smith" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="editClassRoom">Room Number <span style="color: var(--error-color);">*</span></label>
+                            <input type="text" id="editClassRoom" class="form-control" placeholder="e.g., CS-101" required>
+                        </div>
+                        
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="editClassTime">Class Timing <span style="color: var(--error-color);">*</span></label>
+                            <input type="text" id="editClassTime" class="form-control" placeholder="e.g., 8:00 AM - 9:30 AM" required>
+                            <small class="form-text">Enter the actual class timing (independent of time slot)</small>
+                        </div>
+                        
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="editClassCampus">Campus Location</label>
+                            <input type="text" id="editClassCampus" class="form-control" value="SZABIST University Campus H-8/4 ISB">
+                        </div>
+                        
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="editClassNotes">Additional Notes (Optional)</label>
+                            <textarea id="editClassNotes" class="form-control" rows="2" placeholder="Any additional information about this class..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <input type="hidden" id="editClassId">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeModal('classEditModal')">Cancel</button>
+                <button class="btn btn-primary" onclick="saveClassDetails()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin-panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "section": "BSAI-7A",
+  "semester": "7th Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [
+      {
+        "course": "AIC 4805 Speech Processing (3,0)",
+        "faculty": "Saad Irfan Khan",
+        "room": "206",
+        "time": "06:30 PM – 08:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4501 Design and Creativity (3,0)",
+        "faculty": "Hafiz Abdul Basit Shah",
+        "room": "204",
+        "time": "08:00 PM – 09:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "tuesday": [],
+    "wednesday": [],
+    "thursday": [],
+    "friday": [
+      {
+        "course": "CSC 4106 Parallel and Distributed Computing (3,0)",
+        "faculty": "Ms. Maryam Mir",
+        "room": "101",
+        "time": "02:00 PM - 03:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 4102 Professional Practices (3,0)",
+        "faculty": "Saima Akbar (VF)",
+        "room": "101",
+        "time": "03:30 PM - 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "saturday": [
+      {
+        "course": "CSC 4102 Professional Practices (3,0)",
+        "faculty": "Saima Akbar",
+        "room": "105",
+        "time": "11:00 AM - 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4501 Design and Creativity (3,0)",
+        "faculty": "Mr. Hafiz Abdul Basit Shah",
+        "room": "105",
+        "time": "12:30 PM - 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "section": "BSAI-6B",
+  "semester": "6th Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [
+      {
+        "course": "AIC 4503 Introduction to Accounting (3,0)",
+        "faculty": "Saad Irfan Khan",
+        "room": "201",
+        "time": "11:00 AM – 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4702 Deep Learning (3,0)",
+        "faculty": "Saad Irfan Khan",
+        "room": "201",
+        "time": "12:30 PM – 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AICL 3602 Lab: Computing Vision (0,1)",
+        "faculty": "Ms. Sidra Safdar",
+        "room": "Lab 03",
+        "time": "02:00 PM – 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "tuesday": [
+      {
+        "course": "Natural Language Processing (3,0)",
+        "faculty": "Saad Irfan Khan",
+        "room": "Hall 01 A",
+        "time": "02:00 PM – 03:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4503 Introduction to Accounting (3,0)",
+        "faculty": "Saad Irfan Khan",
+        "room": "Hall 01 A",
+        "time": "03:30 PM – 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 3109 Software Engineering (3,0)",
+        "faculty": "Humayoon",
+        "room": "102",
+        "time": "05:00 PM – 06:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4702 Deep Learning (3,0)",
+        "faculty": "Saad Irfan Khan",
+        "room": "301",
+        "time": "06:30 PM – 08:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "wednesday": [],
+    "thursday": [
+      {
+        "course": "CSC 3109 Software Engineering (3,0)",
+        "faculty": "Humayoon",
+        "room": "305",
+        "time": "11:00 AM – 12:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1205 Technical and Business Writing (3,0)",
+        "faculty": "Saad Irfan khan",
+        "room": "305",
+        "time": "12:30 PM – 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "Natural Language Processing (3,0)",
+        "faculty": "Saad Irfan khan",
+        "room": "303",
+        "time": "02:00 PM – 03:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "friday": [
+      {
+        "course": "CSC 1205 Technical and Business Writing (3,0)",
+        "faculty": "Taimur - Shahzad",
+        "room": "102",
+        "time": "02:00 PM - 03:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 3602 Computing Vision (2,0)",
+        "faculty": "Malik Muhmmad Shahid Ali (VF)",
+        "room": "102",
+        "time": "03:30 PM - 05:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "saturday": []
+  }
+}

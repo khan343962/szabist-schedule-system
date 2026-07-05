@@ -1,0 +1,87 @@
+{
+  "section": "BSAI-1A",
+  "semester": "1st Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [
+      {
+        "course": "CSC 1102 English Composition and Comprehension (3,0)",
+        "faculty": "Sadia Munir",
+        "room": "206",
+        "time": "08:00 AM – 09:30 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1103 Fundamentals of Programming (3,0)",
+        "faculty": "Aizaz Raziq",
+        "room": "206",
+        "time": "09:30 AM – 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSCL 1108 Lab: Introduction to Computer Science (0,1)",
+        "faculty": "Ahsan Abbas",
+        "room": "Lab 06",
+        "time": "11:00 AM – 02:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "tuesday": [
+      {
+        "course": "CSC 1107 Applied Physics (2,0)",
+        "faculty": "Dr kamran",
+        "room": "305",
+        "time": "08:00 AM – 10:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1108 Introduction to Computer Science (2,0)",
+        "faculty": "Atif Iftikhar",
+        "room": "305",
+        "time": "10:00 AM – 12:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1101 Calculus and Analytical Geometry (3,0)",
+        "faculty": "Dr. Hina Gul",
+        "room": "Hall 01 A",
+        "time": "12:00 PM – 01:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "wednesday": [
+      {
+        "course": "CSC 1102 English Composition and Comprehension (3,0)",
+        "faculty": "Sadia Munir",
+        "room": "Hall 01 B",
+        "time": "08:00 AM – 09:30 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 1101 Calculus and Analytical Geometry (3,0)",
+        "faculty": "Dr. Hina Gul",
+        "room": "Hall 01 B",
+        "time": "09:30 AM – 11:00 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "thursday": [],
+    "friday": [
+      {
+        "course": "CSCL 1103 Lab: Fundamentals of Programming (0,1)",
+        "faculty": "Zahra Khalid",
+        "room": "Digital Lab",
+        "time": "08:00 AM - 10:45 AM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSCL 1107 Lab: Applied Physics (0,1)",
+        "faculty": "Kainat Javed",
+        "room": "Digital Lab",
+        "time": "10:45 AM - 01:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "saturday": []
+  }
+}

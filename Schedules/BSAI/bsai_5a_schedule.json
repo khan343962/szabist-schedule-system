@@ -1,0 +1,94 @@
+{
+  "section": "BSAI-5A",
+  "semester": "5th Semester",
+  "university": "SZABIST University, Islamabad Campus",
+  "weekly_schedule": {
+    "monday": [
+      {
+        "course": "AIC 3502 Knowledge Representation and Reasoning (3,0)",
+        "faculty": "Maria Zuraiz",
+        "room": "303",
+        "time": "05:00 PM – 06:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 4501 Design and Creativity (3,0)",
+        "faculty": "Zeeshan Afgun",
+        "room": "204",
+        "time": "06:30 PM – 08:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "tuesday": [
+      {
+        "course": "AIC 3502 Knowledge Representation and Reasoning (3,0)",
+        "faculty": "Maria Zuraiz",
+        "room": "306",
+        "time": "02:00 PM – 03:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AIC 3501 Artificial Neural Networks (2,0)",
+        "faculty": "Dr. Rizwan Rashid",
+        "room": "306",
+        "time": "03:30 PM – 05:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AICL 3503 Lab: Machine Learning (0,1)",
+        "faculty": "Atif Iftikhar",
+        "room": "Digital Lab",
+        "time": "05:30 PM – 08:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "wednesday": [],
+    "thursday": [
+      {
+        "course": "CSCL 2205 Lab: Operating Systems (0,1)",
+        "faculty": "Ms. Sidra Safdar",
+        "room": "Digital Lab",
+        "time": "02:00 PM – 05:00 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "CSC 2205 Operating Systems (3,0)",
+        "faculty": "Maryam Mir",
+        "room": "305",
+        "time": "05:00 PM – 06:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      },
+      {
+        "course": "AICL 3501 Lab: Artificial Neural Networks (0,1)",
+        "faculty": "Muslim Rizvi",
+        "room": "306",
+        "time": "06:30 PM – 09:30 PM",
+        "campus": "SZABIST University Campus H-8/4 ISB"
+      }
+    ],
+    "friday": [
+      {
+        "course": "AIC 4501 Design and Creativity (3,0)",
+        "faculty": "ZEESHAN AFGUN (VF)",
+        "room": "NB-203",
+        "time": "02:00 PM - 03:30 PM",
+        "campus": "SZABIST HMB I-8 MarkazCampus"
+      },
+      {
+        "course": "CSC 2205 Operating Systems (3,0)",
+        "faculty": "Maryam Mir",
+        "room": "NB-202",
+        "time": "05:00 PM - 06:30 PM",
+        "campus": "SZABIST HMB I-8 MarkazCampus"
+      },
+      {
+        "course": "AIC 3503 Machine Learning (2,0)",
+        "faculty": "Sarwat Nadeem -",
+        "room": "NB-202",
+        "time": "06:30 PM - 08:30 PM",
+        "campus": "SZABIST HMB I-8 MarkazCampus"
+      }
+    ],
+    "saturday": []
+  }
+}
